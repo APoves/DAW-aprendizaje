@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <title>Compra entradas</title> 
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+  </head>
+
+  <body>
+    <h1>Linking Park</h1>
+    <img src="img/linkinpark.jpg" alt="Linkin Park"> 
+
+    <div id="descripcion">
+      <h3>Descripción del Grupo</h3>
+      <p>Linkin Park es una banda estadounidense de rock, formada en 1996. La banda, conocida
+        por grandes éxitos como "In The End", "Numb" o "What I've Done", regresa con Emily Armstrong 
+        al frente tras la publicación de su nuevo disco "From Zero".</p>
+    </div>
+
+    <div id="fechas">
+      <h3>Fechas de Conciertos</h3>
+      <table>
+        <tr> 
+          <th>Fechas</th>
+          <th>Lugar</th>
+          <th>Hora</th>
+          <th>Precio</th>
+        </tr>
+        <tr>
+          <td>2025-10-15</td>
+          <td>Barcelona</td>
+          <td>19:00</td>
+          <td>98€</td>
+        </tr>
+        <tr>
+          <td>2025-10-17</td>
+          <td>Madrid</td>
+          <td>19:00</td>
+          <td>96€</td>
+        </tr>
+        <tr>
+          <td>2025-10-20</td>
+          <td>Sevilla</td>
+          <td>20:00</td>
+          <td>89€</td>
+        </tr>
+      </table>
+    </div>
+
+    <form>
+      <div id="formulario">
+        <h3>Compra tus entradas</h3>
+
+        <fieldset>
+          <legend>Datos personales</legend>
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" name="nombre" required>
+        </fieldset>
+
+        <fieldset>
+          <legend>Detalles del Concierto</legend>
+          <label for="fecha">Fecha</label>
+          <input type="date" id="fecha" name="fecha" required>
+          <br><br>
+
+          <label for="lugar">Lugar</label>
+          <select name="lugar" id="lugar">
+            <option value="Barcelona">Barcelona</option>
+            <option value="Madrid">Madrid</option>
+            <option value="Sevilla">Sevilla</option>
+          </select>
+          <br><br>
+
+          <label for="cantidad">Cantidad de entradas</label>
+          <select name="cantidad" id="cantidad">
+            <option value="1"> 1 </option>
+            <option value="2"> 2 </option>
+            <option value="3"> 3 </option>
+            <option value="4"> 4 </option>
+            <option value="5"> 5 </option>
+          </select>
+          <br><br>
+
+          <label for="categoria">Tipo de entradas</label>
+          <select name="categoria" id="categoria">
+            <option value="General">General Pista</option>
+            <option value="Grada">Grada</option>
+            <option value="Vip">VIP</option>
+          </select>
+        </fieldset>
+
+        <fieldset>
+          <legend>Método de Pago</legend>
+          <label for="tarjeta">Tarjeta</label>
+          <input type="radio" id="tarjeta" name="metodoPago" value="Tarjeta">
+          <label for="paypal">PayPal</label>
+          <input type="radio" id="paypal" name="metodoPago" value="Paypal">
+          <label for="transferencia">Transferencia</label>
+          <input type="radio" id="transferencia" name="metodoPago" value="Transferencia">
+          <label for="criptomoneda">Criptomoneda</label>
+          <input type="radio" id="criptomoneda" name="metodoPago" value="Criptomoneda">
+        </fieldset>
+
+        <label for="terminos">Acepto los términos y condiciones</label>
+        <input type="checkbox" id="terminos" name="terminos" value="terminos" required>
+        <br><br>
+
+        <button type="button" id="confirmar" class="submit" onclick="login(event)">Confirmar Compra</button>
+    </form>
+
+    <script src="js/script.js"></script> 
+  </body>
+  </html>
