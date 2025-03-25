@@ -10,14 +10,19 @@ h1, h2 {
     margin: 10px 0;
     font-size: 1.5rem;
 }
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;/
+}
 
 body {
     background-color: #FEF9F2;
+    position: relative;
     margin: 0;
     padding: 5px;
     min-width: 320px;
-    width: 100vw;
-    overflow-x: hidden; 
+    width: 100% !important;
+    overflow-x: hidden !important;
 }
 
 @viewport {
