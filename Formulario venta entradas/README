@@ -1,1 +1,40 @@
+###Simulación de proyecto web de formulario de venta de entradas 🎸.
+
+
+##Proyecto realizado para la asignatura Lenguajes de Marcas y Sistemas de Gestión Empresarial.
+
+
+
+Tecnologías utilizadas 👾💻: 
+- HTML.
+- CSS.
+- JavaScript.
+
+
+Distribución 📑:
+- Formulario de compra 📝.
+- Validación de rellenado de datos y aceptación de términos y condiciones.
+- Almacenamiento de datos temporal con sessionStorage.
+- Página de confirmación con volcado de datos del formulario.
+
+
+Estructura del proyecto 📂:
+|-- index.html 
+|-- confirmacion.html
+|------ img/
+|    |----- linkinpark.jpg
+|------ css/
+|    |----- styles.css
+|------ js/
+|    |----- script.js
+
+
+Manejo de errores ✂️:
+- El proyecto cuenta un sistema de validación que asegura que estén rellenos todos los datos del formulario y se hayan aceptado los términos y condiciones:
+	1. Rellenado de campos del formulario.
+	2. Aceptación de términos y condiciones.
+
+En caso de no contar con algunos de los puntos anteriores completos, se mostrará un mensaje en pantalla, impidiendo continuar con el envío del formulario ⛔.
+En caso de datos completos, se envían los datos del formulario, accediendo automáticamente a la página de confirmación ✅.
+
 
