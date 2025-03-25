@@ -1,57 +1,65 @@
 /* CSS general */
-
-*{
+* {
     font-family: Arial, Helvetica, sans-serif;
     box-sizing: border-box;
 }
 
-h1, h2{
+h1, h2 {
     text-align: center;
     font-family: Verdana;
-    margin: 15px 0
+    margin: 10px 0;
+    font-size: 1.5rem;
 }
 
-body{
+body {
     background-color: #FEF9F2;
     margin: 0;
-    padding: 10px;
+    padding: 5px;
     min-width: 320px;
+    width: 100vw;
+    overflow-x: hidden; 
+}
+
+@viewport {
+    width: device-width;
+    zoom: 1.0;
 }
 
 /* CSS index.html */
-
 img {
-    border-radius: 10px;
+    border-radius: 8px;
     display: block;
-    margin: 0 auto 20px auto;
-    width: 100%;
-    max-width: 500px;
+    margin: 0 auto 15px auto;
+    width: 80%;
+    max-width: 40%;
+    height: auto;
 }
 
-#descripcion , #fechas , #formulario {
+#descripcion, #fechas, #formulario {
     background-color: white;
-    margin: 0 auto 20px auto;
+    margin: 0 auto 15px auto;
     width: 100%;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 12px;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
 }
 
 table, th, td {
     border: 1px solid;
     width: 100%;
     border-collapse: collapse;
+    font-size: 0.8rem; 
 }
 
 table {
-    margin: 15px auto;
+    margin: 10px auto;
     table-layout: fixed;
     text-align: center;
 }
 
 th, td {
-    padding: 8px;
-    font-size: 14px;
+    padding: 6px;
+    word-break: break-word;
 }
 
 th {
@@ -71,39 +79,40 @@ tr:hover {
 }
 
 fieldset {
-    border: 2px solid #006597;
+    border: 1px solid #006597;
     border-radius: 5px;
-    padding: 15px;
-    margin-bottom: 20px;
+    padding: 10px;
+    margin-bottom: 15px;
 }
 
 legend {
     font-weight: bold;
     color: #006597;
     padding: 0 5px;
+    font-size: 0.9rem;
 }
 
 #nombre {
     width: 100%;
-    height: 40px;
-    margin-bottom: 10px;
+    height: 35px;
+    margin-bottom: 8px;
 }
 
 input, select, textarea {
-    padding: 10px;
-    border-radius: 5px;
+    padding: 8px;
+    border-radius: 4px;
     border: 1px solid #ccc;
     width: 100%;
-    margin-bottom: 10px;
-    font-size: 16px;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
 }
 
 select {
-    height: 40px;
+    height: 35px;
 }
 
 textarea {
-    height: 100px;
+    height: 80px;
     resize: vertical; 
 }
 
@@ -111,18 +120,18 @@ button {
     background-color: #006597;
     color: white;
     display: block;
-    margin: 20px auto;
+    margin: 15px auto;
     border: 2px;
-    padding: 12px 25px;
+    padding: 10px 20px;
     text-align: center;
     border-radius: 5px;
     border: 2px solid #00476b;
     cursor: pointer;
     text-decoration: none;
-    font-size: 16px;
-    box-shadow: 0 3px #999;
+    font-size: 0.9rem;
+    box-shadow: 0 2px #999;
     width: 100%;
-    max-width: 300px;
+    max-width: 100%;
 }
 
 .submit:hover {
@@ -133,14 +142,16 @@ button {
 #mpago {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 8px;
+    justify-content: space-between;
 }
 
 #mpago label {
     display: flex;
     align-items: center;
-    margin-right: 15px;
+    margin-right: 10px;
     white-space: nowrap;
+    font-size: 0.8rem;
 }
 
 #mpago input[type="radio"] {
@@ -151,33 +162,35 @@ button {
 
 input[type="checkbox"] {
     width: auto;
-    margin-right: 10px;
+    margin-right: 8px;
+    transform: scale(0.9);
 }
 
 /* CSS confirmacion.html */
 #detallesc {
     background-color: white;
-    margin: 0 auto 20px auto;
+    margin: 0 auto 15px auto;
     width: 100%;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 12px;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
 }
 
 #detallesc div {
-    margin-bottom: 15px;
-    padding: 10px;
+    margin-bottom: 12px;
+    padding: 8px;
     border-bottom: 1px solid #eee;
+    font-size: 0.9rem;
 }
 
 #detallesc div:last-child {
     border-bottom: none;
 }
 
-/* Media queries ¿escritorio? */
+/* MQ móvil */
 @media only screen and (min-width: 650px) {
     body {
-        padding: 20px;
+        padding: 15px;
     }
     
     #descripcion, #fechas, #formulario, #detallesc {
@@ -191,9 +204,39 @@ input[type="checkbox"] {
     
     table {
         width: 95%;
+        font-size: 1rem;
     }
     
     button {
         width: auto;
+        max-width: 300px;
     }
+    
+    h1, h2 {
+        font-size: 2rem;
+    }
+}
+
+/* MQ móviles pequeños */
+@media only screen and (max-width: 400px) {
+    #mpago {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    #mpago label {
+        margin-right: 0;
+    }
+    
+    th, td {
+        padding: 4px;
+        font-size: 0.7rem;
+    }
+    
+    fieldset {
+        padding: 8px;
+    }
+
+
+
 }
