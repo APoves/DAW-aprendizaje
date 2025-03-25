@@ -1,9 +1,7 @@
-/* Función + if else asociado a index.html */
-
 function login(event) {
     event.preventDefault();
 
-    /* Variables formulario y recogida de datos */ 
+    /* Variables del formulario y datos */ 
     var nombre = document.getElementById("nombre").value;
     var fecha = document.getElementById("fecha").value;
     var lugar = document.getElementById("lugar").value;
@@ -12,31 +10,27 @@ function login(event) {
     var metodoPago = document.querySelector('input[name="metodoPago"]:checked');
     var terminos = document.getElementById("terminos").checked;
 
-
-    if (nombre && fecha && lugar && cantidad && categoria && metodoPago){
-
-        /* Almacenamiento de datos (temporal) */
-        sessionStorage.setItem("nombre", nombre);
-        sessionStorage.setItem("fecha", fecha);
-        sessionStorage.setItem("lugar", lugar);
-        sessionStorage.setItem("cantidad", cantidad);
-        sessionStorage.setItem("categoria", categoria);
-        sessionStorage.setItem("metodoPago", metodoPago.value); 
-
-        window.location.href = "confirmacion.html"; /* Redirecciona
-         a confirmación.html */
-    } else { 
-        /* Obligación a que se completen todos los campos del formulario */
-        alert("Es necesario rellenar todos los datos del formulario");
+    /* Validación campos del formulario completos */
+    if (!nombre || !fecha || !lugar || !cantidad || !categoria || !metodoPago) { 
+        alert("Se deben rellenar todos los datos del formulario");
+        return false;
     }
-    
-    /* Obligación a aceptar checkbox de términos y condiciones*/
+
+    /* Validación aceptación términos y condiciones */
     if (!terminos) {
-        alert("Debes aceptar los términos y condiciones");
-        return;
+        alert("Se deben aceptar los términos y condiciones");
+        return false;
     }
-}
 
+    /* Almacenamiento de datos del formulario */
+    sessionStorage.setItem("nombre", nombre);
+    sessionStorage.setItem("fecha", fecha);
+    sessionStorage.setItem("lugar", lugar);
+    sessionStorage.setItem("cantidad", cantidad);
+    sessionStorage.setItem("categoria", categoria);
+    sessionStorage.setItem("metodoPago", metodoPago.value);  
+    window.location.href = "confirmacion.html";
+}
 
 /*  Validación y volcado de datos asociado a confirmacion.html */
 
