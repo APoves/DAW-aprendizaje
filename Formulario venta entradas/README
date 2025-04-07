@@ -44,6 +44,7 @@ Ya que es un mini proyecto con pocos requisitos y creado como toma de contacto e
 - Implementación de sistema que permita seleccionar una fecha ligándola a la ciudad donde se dé el concierto en esa fecha.
 - Alternancia de precios, ya que la totalidad de tipos de entradas (Pista, Grada, Normal), cuentan con un mismo precio.
 - Almacenar y enviar los datos del formulario. La única forma de almacenamiento es el SessionStorage, por lo que los datos al enviar el formulario, no llegan a ningún sitio en ningún caso.
+- Es posible inyectar cualquier malware en el formulario, por lo que cuenta con multitud de problemas de seguridad.
 
 
 
