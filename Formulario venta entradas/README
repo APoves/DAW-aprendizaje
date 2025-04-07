@@ -39,9 +39,10 @@ En caso de datos completos, se envían los datos del formulario, accediendo auto
 
 
 Posibles mejoras: 
-Ya que es un mini proyecto con pocos requisitos y creado como toma de contacto, es importante recordar que hay muchas posibles mejoras, entre ellas:
+Ya que es un mini proyecto con pocos requisitos y creado como toma de contacto en un entorno ideal, es importante recordar que hay muchas posibles mejoras, entre ellas:
 - Modificación del selector de fechas, impidiendo que pueda seleccionarse cualquier fecha, independientemente de si hay conciertos o no en la fecha.
 - Implementación de sistema que permita seleccionar una fecha ligándola a la ciudad donde se dé el concierto en esa fecha.
+- Alternancia de precios, ya que 
 
 
 
