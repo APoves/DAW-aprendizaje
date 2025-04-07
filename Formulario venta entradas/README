@@ -38,7 +38,7 @@ En caso de no contar con algunos de los puntos anteriores completos, se mostrar�
 En caso de datos completos, se envían los datos del formulario, accediendo automáticamente a la página de confirmación ✅.
 
 
-Posibles mejoras: 
+Posibles mejoras 🌐: 
 Ya que es un mini proyecto con pocos requisitos y creado como toma de contacto en un entorno ideal, es importante recordar que hay muchas posibles mejoras, entre ellas:
 - Modificación del selector de fechas, impidiendo que pueda seleccionarse cualquier fecha, independientemente de si hay conciertos o no en la fecha.
 - Implementación de sistema que permita seleccionar una fecha ligándola a la ciudad donde se dé el concierto en esa fecha.
