@@ -13,9 +13,7 @@ En la PAC de Desarrollo de la asignatura, se requiere al alumnado la realizació
 
 ## Tecnologías utilizadas: 
 - HTML.
-<br>
 - CSS.
-<br>
 - JavaScript.
 <br>
 <br>
