@@ -50,8 +50,8 @@ En la PAC de Desarrollo de la asignatura, se requiere al alumnado la realizació
 # Manejo de errores:
 
 - El proyecto cuenta un sistema de validación que asegura que estén rellenos todos los datos del formulario y se hayan aceptado los términos y condiciones:
-	- 1. Rellenado de campos del formulario.
-	- 2. Aceptación de términos y condiciones.
+	 Rellenado de campos del formulario.
+	   Aceptación de términos y condiciones.
 <br>
 <br>
 En caso de no contar con algunos de los puntos anteriores completos, se mostrará un mensaje en pantalla, impidiendo continuar con el envío del formulario.
