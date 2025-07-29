@@ -1,17 +1,17 @@
 ### Simulación de proyecto web de formulario de venta de entradas 🎸.
-<br>
+
 ## PROYECTO DE SIMULACIÓN DE COMPRA DE ENTRADAS:
-<br>
+
 # Sitio web: https://formularioe.netlify.app/
-<br>
+
 <br>
 Proyecto realizado para la asignatura Lenguajes de Marcas y Sistemas de Gestión Empresarial.
 <br>
 En la PAC de Desarrollo de la asignatura, se requiere al alumnado la realización de un proyecto web de simulación de un formulario venta de entradas, donde se pide, además de la realización del correspondiente código HTML y CSS para dar estructura y forma al proyecto, la confirmación y volcado de datos con Javascript del index.html a la página cofirmacion.html.
 <br>
 <br>
-Tecnologías utilizadas: 
-<br>
+
+## Tecnologías utilizadas: 
 - HTML.
 <br>
 - CSS.
@@ -19,8 +19,8 @@ Tecnologías utilizadas:
 - JavaScript.
 <br>
 <br>
+
 # Distribución: 
-<br>
 - Formulario de compra.
 <br>
 - Validación de rellenado de datos y aceptación de términos y condiciones.
@@ -30,8 +30,9 @@ Tecnologías utilizadas:
 - Página de confirmación con volcado de datos del formulario.
 <br>
 <br>
+
 # Estructura:
-<br>
+
 |-- index.html 
 <br>
 |-- confirmacion.html
@@ -50,8 +51,9 @@ Tecnologías utilizadas:
 
 <br>
 <br>
-## Manejo de errores:
-<br>
+
+# Manejo de errores:
+
 - El proyecto cuenta un sistema de validación que asegura que estén rellenos todos los datos del formulario y se hayan aceptado los términos y condiciones:
 <br>
 	1. Rellenado de campos del formulario.
@@ -67,8 +69,9 @@ En caso de datos completos, se envían los datos del formulario, accediendo auto
 <br>
 <br>
 <br>
-## Posibles mejoras: 
-<br>
+
+# Posibles mejoras: 
+
 Ya que es un mini proyecto con pocos requisitos y creado como toma de contacto en un entorno ideal, es importante recordar que hay muchas posibles mejoras, entre ellas:
 <br>
 <br>
