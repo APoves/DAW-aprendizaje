@@ -20,11 +20,8 @@ En la PAC de Desarrollo de la asignatura, se requiere al alumnado la realizació
 
 # Distribución: 
 - Formulario de compra.
-<br>
 - Validación de rellenado de datos y aceptación de términos y condiciones.
-<br>
 - Almacenamiento de datos temporal con sessionStorage.
-<br>
 - Página de confirmación con volcado de datos del formulario.
 <br>
 <br>
@@ -53,10 +50,8 @@ En la PAC de Desarrollo de la asignatura, se requiere al alumnado la realizació
 # Manejo de errores:
 
 - El proyecto cuenta un sistema de validación que asegura que estén rellenos todos los datos del formulario y se hayan aceptado los términos y condiciones:
-<br>
-	1. Rellenado de campos del formulario.
-<br>
-	2. Aceptación de términos y condiciones.
+	- 1. Rellenado de campos del formulario.
+	- 2. Aceptación de términos y condiciones.
 <br>
 <br>
 En caso de no contar con algunos de los puntos anteriores completos, se mostrará un mensaje en pantalla, impidiendo continuar con el envío del formulario.
@@ -72,15 +67,10 @@ En caso de datos completos, se envían los datos del formulario, accediendo auto
 
 Ya que es un mini proyecto con pocos requisitos y creado como toma de contacto en un entorno ideal, es importante recordar que hay muchas posibles mejoras, entre ellas:
 <br>
-<br>
 - Modificación del selector de fechas, impidiendo que pueda seleccionarse cualquier fecha, independientemente de si hay conciertos o no en la fecha.
-<br>
 - Implementación de sistema que permita seleccionar una fecha ligándola a la ciudad donde se dé el concierto en esa fecha.
-<br>
 - Alternancia de precios, ya que la totalidad de tipos de entradas (Pista, Grada, Normal), cuentan con un mismo precio.
-<br>
 - Almacenar y enviar los datos del formulario. La única forma de almacenamiento es el SessionStorage, por lo que los datos al enviar el formulario, no llegan a ningún sitio en ningún caso.
-<br>
 - Es posible inyectar cualquier malware en el formulario, por lo que cuenta con multitud de problemas de seguridad.
 
 <br>
