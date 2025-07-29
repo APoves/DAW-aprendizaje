@@ -2,7 +2,7 @@
 <br>
 ## PROYECTO DE SIMULACIÓN DE COMPRA DE ENTRADAS:
 <br>
-Sitio web: https://formularioe.netlify.app/
+# Sitio web: https://formularioe.netlify.app/
 <br>
 <br>
 Proyecto realizado para la asignatura Lenguajes de Marcas y Sistemas de Gestión Empresarial.
@@ -19,7 +19,7 @@ Tecnologías utilizadas:
 - JavaScript.
 <br>
 <br>
-Distribución: 
+# Distribución: 
 <br>
 - Formulario de compra.
 <br>
@@ -30,7 +30,7 @@ Distribución:
 - Página de confirmación con volcado de datos del formulario.
 <br>
 <br>
-Estructura:
+# Estructura:
 <br>
 |-- index.html 
 <br>
@@ -50,13 +50,14 @@ Estructura:
 
 <br>
 <br>
-Manejo de errores:
+## Manejo de errores:
 <br>
 - El proyecto cuenta un sistema de validación que asegura que estén rellenos todos los datos del formulario y se hayan aceptado los términos y condiciones:
 <br>
 	1. Rellenado de campos del formulario.
 <br>
 	2. Aceptación de términos y condiciones.
+<br>
 <br>
 En caso de no contar con algunos de los puntos anteriores completos, se mostrará un mensaje en pantalla, impidiendo continuar con el envío del formulario.
 <br>
@@ -66,10 +67,10 @@ En caso de datos completos, se envían los datos del formulario, accediendo auto
 <br>
 <br>
 <br>
-Posibles mejoras: 
+## Posibles mejoras: 
 <br>
 Ya que es un mini proyecto con pocos requisitos y creado como toma de contacto en un entorno ideal, es importante recordar que hay muchas posibles mejoras, entre ellas:
-
+<br>
 <br>
 - Modificación del selector de fechas, impidiendo que pueda seleccionarse cualquier fecha, independientemente de si hay conciertos o no en la fecha.
 <br>
