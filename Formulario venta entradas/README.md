@@ -1,6 +1,7 @@
 ### Simulación de proyecto web de formulario de venta de entradas 🎸.
 <br>
 ## PROYECTO DE SIMULACIÓN DE COMPRA DE ENTRADAS:
+<br>
 Sitio web: https://formularioe.netlify.app/
 <br>
 <br>
