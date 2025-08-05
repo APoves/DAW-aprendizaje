@@ -1,16 +1,16 @@
 # DAW-aprendizaje
 
-Este repositorio contiene varios proyectos y ejercicios de aprendizaje relacionados con desarrollo web, programación y tecnologías asociadas, creados por Aurora Marina Poves durante su formación en Desarrollo de Aplicaciones Web (DAW).
+  Repositorio con varios proyectos y ejercicios de aprendizaje relacionados con desarrollo web, programación y tecnologías asociadas.
+  Creados por la propietaria del perfil durante la formación en Desarrollo de Aplicaciones Web (DAW).
 
 ---
 
 ## Contenido del repositorio
 
-Actualmente incluye varias carpetas con proyectos y prácticas, entre ellas:
+Actualmente incluye varias carpetas con proyectos y prácticas:
 
-- `Contador (React)`: Proyecto sencillo de un contador realizado con React y Vite, para aprender hooks y gestión de estado.
-- `Formulario venta entradas`: Proyecto con formulario para la venta de entradas (detalle pendiente).
-- Otras carpetas con ejercicios y mini proyectos de diferentes tecnologías y temáticas.
+- `Contador (React)`: mini-proyecto personal sencillo para aprendizaje. Contador realizado con React y Vite, para aprender hooks y gestión de estado.
+- `Formulario venta entradas`: Proyecto con formulario para la venta de entradas, realizado para la asignatura Lenguajes de Marcas y Sistemas de Gestión Empresarial.
 
 ---
 
