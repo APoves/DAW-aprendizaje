@@ -19,7 +19,7 @@ Contador que incrementa al hacer clic en el botón, mostrando el resultado del c
 
 ## Estructura básica:
 ```txt
-3-counter-app/
+Contador/
 ├── src/
 │   ├── CounterApp.jsx
 │   └── main.jsx
