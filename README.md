@@ -1,6 +1,7 @@
 # DAW-aprendizaje
 
   Repositorio con varios proyectos y ejercicios de aprendizaje relacionados con desarrollo web, programación y tecnologías asociadas.
+  <br>
   Creados por la propietaria del perfil durante la formación en Desarrollo de Aplicaciones Web (DAW).
 
 ---
@@ -25,7 +26,8 @@ Actualmente incluye varias carpetas con proyectos y prácticas:
 
 
 ## Contribuciones
-Este repositorio es de uso personal para aprendizaje y documentación.
+Repositorio de uso personal para aprendizaje y documentación.
+<br>
 Si quieres aportar ideas o mejoras, puedes contactarme o abrir un issue, además de poder utilizar el repositorio libremente.
 
 
