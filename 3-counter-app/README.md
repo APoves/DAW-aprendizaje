@@ -1,6 +1,6 @@
 # Contador con React + Vite
 
-Este proyecto es un pequeño contador, realizado a modo de aprendizaje con React y **Vite** como ejercicio de aprendizaje personal.
+Este proyecto es un pequeño contador, realizado con React y Vite como ejercicio de aprendizaje personal.
 
 
 ## Tecnologías utilizadas:
