@@ -19,7 +19,6 @@ Contador que incrementa al hacer clic en el botón, mostrando el resultado del c
 
 ## Estructura básica:
 
-\`\`\`
 3-counter-app/
 ├── src/
 │   ├── CounterApp.jsx
@@ -29,18 +28,8 @@ Contador que incrementa al hacer clic en el botón, mostrando el resultado del c
 ├── package.json
 ├── vite.config.js
 └── README.md
-\`\`\`
 
 
 
-## Cómo ejecutarlo
-
-1. Instalar dependencias:
-\`\`\`bash
-npm install
-\`\`\`
-
-2. Ejecutar en modo desarrollo:
-\`\`\`bash
-npm run dev
-\`\`\`
+## Licencia
+Uso libre con fines educativos y personales.
