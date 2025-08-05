@@ -1,17 +1,18 @@
-# Proyecto: Contador con React + Vite
+# Contador con React + Vite
 
-Este proyecto es un pequeño **contador** hecho con **React** y **Vite** como ejercicio de aprendizaje.
+Este proyecto es un pequeño contador, realizado a modo de aprendizaje con React y **Vite** como ejercicio de aprendizaje.
 
-## 🔧 Tecnologías usadas
 
-- [React](https://react.dev/)
-- [Vite](https://vitejs.dev/)
-- JavaScript moderno
+## Tecnologías utilizadas
+
+- React.
+- Vite.
+- JavaScript.
 - JSX
 
-## 🚀 ¿Qué hace?
 
-Un simple contador que se incrementa al hacer clic en un botón.
+## Uso y utilidad:
+Contador que incrementa al hacer clic en el botón, mostrando el resultado del contador.
 
 \`\`\`jsx
 <h2>El valor del contador es { counter }</h2>
