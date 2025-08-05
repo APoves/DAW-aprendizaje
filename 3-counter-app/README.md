@@ -28,7 +28,7 @@ Contador que incrementa al hacer clic en el botón, mostrando el resultado del c
 ├── package.json
 ├── vite.config.js
 └── README.md
-
+```
 
 
 ## Licencia
