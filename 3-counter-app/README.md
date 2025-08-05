@@ -11,8 +11,10 @@ Este proyecto es un pequeño contador, realizado a modo de aprendizaje con React
 - JSX
 
 
+
 ## Uso y utilidad:
 Contador que incrementa al hacer clic en el botón, mostrando el resultado del contador.
+
 
 
 ## 📂 Estructura básica:
@@ -29,19 +31,15 @@ Contador que incrementa al hacer clic en el botón, mostrando el resultado del c
 \`\`\`
 
 
-## ▶️ Cómo ejecutarlo
+
+## Cómo ejecutarlo
 
 1. Instalar dependencias:
-
 \`\`\`bash
 npm install
 \`\`\`
 
 2. Ejecutar en modo desarrollo:
-
 \`\`\`bash
 npm run dev
 \`\`\`
-
----
-
