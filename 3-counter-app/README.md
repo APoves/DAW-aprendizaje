@@ -1,9 +1,9 @@
 # Contador con React + Vite
 
-Este proyecto es un pequeño contador, realizado a modo de aprendizaje con React y **Vite** como ejercicio de aprendizaje.
+Este proyecto es un pequeño contador, realizado a modo de aprendizaje con React y **Vite** como ejercicio de aprendizaje personal.
 
 
-## Tecnologías utilizadas
+## Tecnologías utilizadas:
 
 - React.
 - Vite.
@@ -14,13 +14,8 @@ Este proyecto es un pequeño contador, realizado a modo de aprendizaje con React
 ## Uso y utilidad:
 Contador que incrementa al hacer clic en el botón, mostrando el resultado del contador.
 
-\`\`\`jsx
-<h2>El valor del contador es { counter }</h2>
-<button onClick={ counterIncrement } > incrementar contador +1</button>
-\`\`\`
 
-## 📂 Estructura básica
-
+## 📂 Estructura básica:
 \`\`\`
 3-counter-app/
 ├── src/
@@ -32,6 +27,7 @@ Contador que incrementa al hacer clic en el botón, mostrando el resultado del c
 ├── vite.config.js
 └── README.md
 \`\`\`
+
 
 ## ▶️ Cómo ejecutarlo
 
@@ -49,5 +45,3 @@ npm run dev
 
 ---
 
-✅ Proyecto creado como parte del repositorio general: [DAW-aprendizaje](https://github.com/APoves/DAW-aprendizaje)
-"
