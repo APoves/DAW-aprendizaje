@@ -17,7 +17,8 @@ Contador que incrementa al hacer clic en el botón, mostrando el resultado del c
 
 
 
-## 📂 Estructura básica:
+## Estructura básica:
+
 \`\`\`
 3-counter-app/
 ├── src/
