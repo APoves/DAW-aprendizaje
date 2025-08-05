@@ -29,9 +29,3 @@ Actualmente incluye varias carpetas con proyectos y prácticas:
 Repositorio de uso personal para aprendizaje y documentación.
 <br>
 Si quieres aportar ideas o mejoras, puedes contactarme o abrir un issue, además de poder utilizar el repositorio libremente.
-
-
-
-Autora:
-Aurora Marina Poves
-https://github.com/APoves
