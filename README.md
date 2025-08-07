@@ -1,20 +1,21 @@
 # Contenido del repositorio DAW-aprendizaje:
 
-  Repositorio con varios proyectos y ejercicios de aprendizaje relacionados con desarrollo web, programación y tecnologías asociadas.
+  Repositorio con proyectos y ejercicios de aprendizaje relacionados con desarrollo web, programación y tecnologías asociadas.
 <br>
-  Creados por la autora del perfil durante la formación en Desarrollo de Aplicaciones Web (DAW).
+  El fin de dicho repositorio es el aprendizaje y afianzamiento de diferentes tecnologías, así como su afianzamiento. Siendo todos los proyectos reados por la autora del perfil durante la formación en Desarrollo de Aplicaciones Web (DAW), ya sean como mini-proyectos y/o ejercicios de clase, además de proyectos de aprendizaje personal realizados a partir de diversos cursos, de manera totalmente externa al CFGS en DAW.
 
 ---
 
 ### Objetivo:
-  El fin de dicho repositorio es el aprendizaje y afianzamiento de diferentes tecnologías, así como su afianzamiento.
+
+  
 
 ## Proyectos realizados:
 
 | Proyecto | Enlace | Tecnologías utilizadas |
 | ----------- | ----------- | ----------- |
-| Formulario venta de entradas |[📂]([https://github.com/APoves/Repo/tree/main/01%20Cat%20Photo%20App](https://github.com/APoves/DAW-aprendizaje/tree/main/Formulario%20venta%20entradas))| Almacenamiento en localStorage (JavaScript). |
-| Contador |[📂](https://github.com/APoves/DAW-aprendizaje/tree/main/Contador%20(React))| JavaScript, React y Vite. |
+| Formulario venta de entradas |[📂]([https://github.com/APoves/Repo/tree/main/01%20Cat%20Photo%20App](https://github.com/APoves/DAW-aprendizaje/tree/main/Formulario%20venta%20entradas))| Almacenamiento en localStorage (JavaScript) |
+| Contador |[📂](https://github.com/APoves/DAW-aprendizaje/tree/main/Contador%20(React))| JavaScript, React y Vite |
 | Facturación |[📂](https://github.com/APoves/DAW-aprendizaje/tree/main/Invoice%20system%20(React))| JavaScript, React, Vite y Bootstrap |
 
 
@@ -38,6 +39,6 @@ Actualmente incluye varias carpetas con proyectos y prácticas:
 
 
 ## Contribuciones
-Repositorio de uso personal para aprendizaje y documentación.
+  Repositorio de uso personal para aprendizaje y documentación.
 <br>
-Si quieres aportar ideas o mejoras, puedes contactarme o abrir un issue, además de poder utilizar el repositorio libremente.
+  Si quieres aportar ideas o mejoras, puedes contactarme o abrir un issue, además de poder utilizar el repositorio libremente.
