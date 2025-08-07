@@ -13,9 +13,9 @@
 Hasta la fecha, se incluyen varias carpetas con proyectos y prácticas:
 
 - `Formulario venta entradas`: Mini-proyecto con formulario para la venta de entradas, realizado para la asignatura Lenguajes de Marcas y Sistemas de Gestión Empresarial.
-<br>
+
 - `Contador (React)`: Mini-proyecto personal sencillo para aprendizaje. Contador realizado con React y Vite, para aprender hooks y gestión de estado.
-<br>
+
 - `Aplicación web de facturación`: Proyecto de aprendizaje. Realización de sistema de facturación.
 
 
