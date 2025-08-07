@@ -46,6 +46,7 @@ export const InvoiceApp = () => {
                                     console.log(event.target.value)
                                 } } />
                             <input
+                        
                             type="number"
                             name="price"
                             placeholder="Precio"
