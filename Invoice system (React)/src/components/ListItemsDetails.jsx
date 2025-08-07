@@ -1,4 +1,5 @@
 import { RowItemDetails } from "./RowItemDetails"
+import PropTypes from 'prop-types';
 
 export const ListItemsDetails = ({ title, items }) => {
 
@@ -9,8 +10,8 @@ export const ListItemsDetails = ({ title, items }) => {
                 <thead>
                     <tr>
                         <th>Producto</th>
-                        <th>Precio</th>
-                        <th>Cantidad</th>
+                        <th type="number">Precio</th>
+                        <th type="number">Cantidad</th>
                     </tr>
                 </thead>
 
@@ -25,4 +26,9 @@ export const ListItemsDetails = ({ title, items }) => {
 
     )
 
+}
+
+ListItemsDetails.propTypes = {
+    title: PropTypes.string.isRequired,
+    item: PropTypes.array.isRequired,
 }

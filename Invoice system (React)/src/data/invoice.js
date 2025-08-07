@@ -21,8 +21,8 @@ export const invoice = {
         {
             id: 1,
             product: 'Todo Arde',
-            price: 22.90,
-            quantity: 1,
+            price: 22.95,
+            quantity: 2,
         },   
         {
             id: 2,

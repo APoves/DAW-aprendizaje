@@ -1,8 +1,16 @@
+import PropTypes from 'prop-types';
 export const ClientDetails = ({title, client}) => {
 
-    const { name: nameClient, lastName, address} = client;
-    const { country, city, street, number, postalCode } = address;
-
+    const { name: nameClient,
+        lastName,
+        address: {
+            country,
+            city,
+            street,
+            number,
+            postalCode }
+        } = client;
+        
     return(
         <>
         <h5>{ title }</h5>
@@ -15,4 +23,9 @@ export const ClientDetails = ({title, client}) => {
         </>
     )
 
+}
+
+ClientDetails.propTypes = {
+    title: PropTypes.string.isRequired,
+    client: PropTypes. object.isRequired,
 }

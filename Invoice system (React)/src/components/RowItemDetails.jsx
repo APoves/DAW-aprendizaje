@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 export const RowItemDetails = ({ product, price, quantity }) => {
 
     return(
@@ -9,4 +10,10 @@ export const RowItemDetails = ({ product, price, quantity }) => {
             </tr>
         </>
     )
+}
+
+RowItemDetails.PropTypes = {
+    product: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    quantity: PropTypes.number.isRequired,
 }
