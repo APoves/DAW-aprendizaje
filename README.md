@@ -21,8 +21,7 @@ Hasta la fecha, se incluyen varias carpetas con proyectos y prácticas:
 
 ---
 
-## Objetivo del repositorio
-:
+## Objetivo del repositorio:
   Repositorio con proyectos y ejercicios de aprendizaje relacionados con desarrollo web, programación y tecnologías asociadas.
   <br>
 <br>
