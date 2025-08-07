@@ -1,13 +1,5 @@
 # Contenido del repositorio DAW-aprendizaje:
 
-  Repositorio con proyectos y ejercicios de aprendizaje relacionados con desarrollo web, programación y tecnologías asociadas.
-  <br>
-<br>
-  El fin de dicho repositorio es el aprendizaje y afianzamiento de diferentes tecnologías, así como su afianzamiento. Siendo todo el contenido realizado por la autora del perfil **durante la formación en Desarrollo de Aplicaciones Web (DAW)**, ya sean como mini-proyectos y/o ejercicios de clase, además de proyectos de aprendizaje personal realizados a partir de diversos **cursos de formación**, de manera totalmente externa al CFGS en DAW.
-
----
-
-
 ## Proyectos realizados:
 
 | Proyecto | Enlace | Tecnologías utilizadas |
@@ -21,10 +13,23 @@
 Hasta la fecha, se incluyen varias carpetas con proyectos y prácticas:
 
 - `Formulario venta entradas`: Mini-proyecto con formulario para la venta de entradas, realizado para la asignatura Lenguajes de Marcas y Sistemas de Gestión Empresarial.
+<br>
 - `Contador (React)`: Mini-proyecto personal sencillo para aprendizaje. Contador realizado con React y Vite, para aprender hooks y gestión de estado.
+<br>
 - `Aplicación web de facturación`: Proyecto de aprendizaje. Realización de sistema de facturación.
 
+
 ---
+
+  Repositorio con proyectos y ejercicios de aprendizaje relacionados con desarrollo web, programación y tecnologías asociadas.
+  <br>
+<br>
+  El fin de dicho repositorio es el aprendizaje y afianzamiento de diferentes tecnologías, así como su afianzamiento. Siendo todo el contenido realizado por la autora del perfil **durante la formación en Desarrollo de Aplicaciones Web (DAW)**, ya sean como mini-proyectos y/o ejercicios de clase, además de proyectos de aprendizaje personal realizados a partir de diversos **cursos de formación**, de manera totalmente externa al CFGS en DAW.
+
+---
+
+
+
 
 ## Tecnologías usadas
 
