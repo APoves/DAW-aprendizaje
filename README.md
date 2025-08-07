@@ -1,6 +1,7 @@
 # Contenido del repositorio DAW-aprendizaje:
 
   Repositorio con proyectos y ejercicios de aprendizaje relacionados con desarrollo web, programación y tecnologías asociadas.
+  <br>
 <br>
   El fin de dicho repositorio es el aprendizaje y afianzamiento de diferentes tecnologías, así como su afianzamiento. Siendo todos los proyectos reados por la autora del perfil durante la formación en Desarrollo de Aplicaciones Web (DAW), ya sean como mini-proyectos y/o ejercicios de clase, además de proyectos de aprendizaje personal realizados a partir de diversos cursos, de manera totalmente externa al CFGS en DAW.
 
