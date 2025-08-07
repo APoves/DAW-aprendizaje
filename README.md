@@ -7,9 +7,6 @@
 
 ---
 
-### Objetivo:
-
-  
 
 ## Proyectos realizados:
 
