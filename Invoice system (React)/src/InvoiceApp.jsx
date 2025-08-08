@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { getInvoice } from './services/getInvoice'
 import { ClientDetails } from './components/ClientDetails';
 import { InvoiceDetails } from './components/invoiceDetails'
@@ -7,13 +8,20 @@ import { TotalInvoice } from './components/TotalInvoice';
 
 export const InvoiceApp = () => {
 
-    const { total, id, name, client, company, items } = getInvoice();
+    const { total, id, name, client, company, items: itemsInitial } = getInvoice();
     
+    const [productValue, setProductValue] = useState('');
+    const [priceValue, setPriceValue] = useState('');
+    const [quantityValue, setQuantityValue] = useState('');
+
+    //useState para guardar los items en la página. Con setItems se pueden agregar nuevos items a la lista.
+    const[items, setItems] = useState(itemsInitial);
+
     return(
         <>
             <div className = "container">
 
-                <div className = "card my-4">
+                <div className = "card my-4 border border-dark">
 
                     <div className = "card-header fs-5 fw-semibold ">
                         Ejemplo Factura:
@@ -34,32 +42,52 @@ export const InvoiceApp = () => {
                             </div>
                         </div>
 
-                        <ListItemsDetails title = "Detalles de la factura:" items = { items }/>
+                        <ListItemsDetails title = "Productos de la factura:" items = { items }/>
                         <TotalInvoice total = { total } />
                         
-                        <form>
+                        <form className="w-50" onSubmit = { event => {
+                            event.preventDefault();
+                            //objeto que contiene los datos del formulario.
+                            setItems ([...items,  {
+                                id: 4,
+                                product: productValue,
+                                price: +priceValue, //conversión a número
+                                quantity: parseInt(quantityValue, 10) //conversión a número
+                            } ]);
+                            //Reiniciar los valores de los inputs.
+                            setProductValue('');
+                            setPriceValue('');
+                            setQuantityValue('');
+                        } } >
+
                             <input
                                 type="text"
                                 name="product"
+                                value={ productValue } //Reinicia el valor del input.
                                 placeholder="Producto"
                                 className="form-control m-3" onChange = { event => {
-                                    console.log(event.target.value)
+                                    console.log(event.target.value);
+                                    setProductValue(event.target.value);
                                 } } />
                             <input
-                        
-                            type="number"
-                            name="price"
-                            placeholder="Precio"
-                            className="form-control m-3"  onChange = { event => {
-                                    console.log(event.target.value)
+                                type="number"
+                                name="price"
+                                value={ priceValue } //Reinicia el valor del input.
+                                placeholder="Precio"
+                                className="form-control m-3"  onChange = { event => {
+                                    console.log(event.target.value);
+                                    setPriceValue(event.target.value);
                                 } } />
                             <input
-                            type="number"
-                            name="quantity"
-                            placeholder="Cantidad"
-                            className="form-control m-3"  onChange = { event => {
-                                    console.log(event.target.value)
+                                type="number"
+                                name="quantity"
+                                value={ quantityValue } //Reinicia el valor del input.
+                                placeholder="Cantidad"
+                                className="form-control m-3"  onChange = { event => {
+                                    console.log(event.target.value);
+                                    setQuantityValue(event.target.value);
                                 } } />
+                            <button type="submit" className="btn btn-primary">Añadir producto</button>
                         </form>
 
                     </div>
