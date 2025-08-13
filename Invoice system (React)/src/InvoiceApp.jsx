@@ -5,6 +5,7 @@ import { InvoiceDetails } from './components/invoiceDetails'
 import {CompanyDetails} from './components/CompanyDetails';
 import { ListItemsDetails } from './components/ListItemsDetails';
 import { TotalInvoice } from './components/TotalInvoice';
+import { FormItemsView } from './components/FormItemsView';
 
 const invoiceInitial = {
     id: 0,
@@ -29,7 +30,7 @@ const invoiceInitial = {
 
 export const InvoiceApp = () => {
 
-const [ total, setTotal] = useState(0);
+    const [ total, setTotal] = useState(0);
 
     //Contador para incremento de id de productos. (Empieza en 4 porque hasta ahora hay 3 productos).
     const [counter, setCounter] = useState(4);
@@ -39,14 +40,7 @@ const [ total, setTotal] = useState(0);
     //useState para guardar los items en la página. Con setItems se pueden agregar nuevos items a la lista.
     const[items, setItems] = useState( [] );
 
-    const [formItemsState, setFormItemsState] = useState({
-        product: '',
-        price: '',
-        quantity: '',
-    });
-
     const { id, name, client, company } = invoice;
-    const {product, price, quantity} = formItemsState;
 
     useEffect(() => {
         const data = getInvoice();
@@ -54,14 +48,6 @@ const [ total, setTotal] = useState(0);
         setInvoice(data);
         setItems(data.items);
     }, []);
-
-    useEffect(() => {
-        //console.log('El precio ha sido modificado.')
-    }, [price]);
-
-    useEffect(() => {
-        //console.log('El formItemsState ha sido modificado.')
-    }, [formItemsState]);
 
     useEffect(() => {
         //console.log('El counter ha sido modificado.')
@@ -72,30 +58,7 @@ const [ total, setTotal] = useState(0);
         //console.log('El item ha sido modificado.')
     }, [items]);
 
-    const onInputChange = ( { target: { name, value } } ) => {
-        //console.log(name);
-        //console.log(value);
-        setFormItemsState({
-            ...formItemsState,
-            [ name ]: value
-        });
-    }
-
-    const onInvoiceItemsSubmit = (event) => {
-        event.preventDefault();
-
-        //Validación por si se añade un producto con cantidad o precio 0.
-        if(product.trim().length <= 1) return;
-        if(price.trim().length <= 1) return;
-        if(isNaN(price.trim())) {
-            alert('Error. El precio introducido debe ser mayor a 0.')
-            return;
-        }
-        if(quantity.trim().length < 1) return;
-        if(isNaN(quantity.trim())) {
-            alert('Error. La cantidad introducida debe ser un número.')
-            return;
-        }
+    const handlerAddItems = ( product, price, quantity) => {
 
         //Objeto que contiene los datos del formulario.
         setItems ([...items,  {
@@ -104,12 +67,7 @@ const [ total, setTotal] = useState(0);
             price: +price.trim(), //Conversión a número
             quantity: parseInt(quantity.trim(), 10) //Conversión a número
         } ]);
-        //Reiniciar los valores de los inputs.
-        setFormItemsState ({
-        product: '',
-        price: '',
-        quantity: '',
-        });
+
         setCounter (counter+1); //Incrementar contador (id) para el siguiente producto.
         }
     
@@ -140,37 +98,7 @@ const [ total, setTotal] = useState(0);
 
                         <ListItemsDetails title = "Productos de la factura:" items = { items }/>
                         <TotalInvoice total = { total } />
-                        
-                        <form className="w-50" onSubmit = { onInvoiceItemsSubmit } >
-                            <input
-                                type="text"
-                                name="product"
-                                value={ product } //Reinicia el valor del input.
-                                placeholder="Producto"
-                                className="form-control m-3" onChange = { onInputChange }
-                            />
-                            <input
-                                type="text"
-                                name="price"
-                                value={ price } //Reinicia el valor del input.
-                                placeholder="Precio"
-                                className="form-control m-3"  onChange =  { onInputChange }
-                            />
-                            <input
-                                type="text"
-                                name="quantity"
-                                value={ quantity } //Reinicia el valor del input.
-                                placeholder="Cantidad"
-                                className="form-control m-3"  onChange =  { onInputChange }
-                            />
-                            
-                            <button
-                                type="submit"
-                                className="btn btn-primary m-3">
-                                Añadir producto
-                            </button>
-                        </form>
-
+                        <FormItemsView handler = {  handlerAddItems }/>
                     </div>
                 </div>
             </div>
