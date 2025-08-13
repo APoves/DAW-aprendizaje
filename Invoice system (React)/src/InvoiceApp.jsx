@@ -30,6 +30,7 @@ const invoiceInitial = {
 
 export const InvoiceApp = () => {
 
+    const [ activeForm, setActiveForm ] = useState (false);
     const [ total, setTotal] = useState(0);
 
     //Contador para incremento de id de productos. (Empieza en 4 porque hasta ahora hay 3 productos).
@@ -70,6 +71,10 @@ export const InvoiceApp = () => {
 
         setCounter (counter+1); //Incrementar contador (id) para el siguiente producto.
         }
+
+        const onActiveForm = () => {
+            setActiveForm(!activeForm)
+        }
     
     return (
         <>
@@ -98,7 +103,14 @@ export const InvoiceApp = () => {
 
                         <ListItemsDetails title = "Productos de la factura:" items = { items }/>
                         <TotalInvoice total = { total } />
-                        <FormItemsView handler = {  handlerAddItems }/>
+
+                        <button className="btn btn-secondary"
+                            onClick= { onActiveForm }> {!activeForm ? 'Añadir producto ' : 'Ocultar formulario'}
+                        </button>
+                        {/* Op. ternario:  */} { !activeForm? '' : <FormItemsView handler = { handlerAddItems }/> }
+                        {/*Op. ternario simplificado:
+                        !activeForm || <FormItemsView handler={handlerAddItems} /> */}
+
                     </div>
                 </div>
             </div>
