@@ -51,15 +51,15 @@ export const InvoiceApp = () => {
     }, []);
 
     useEffect(() => {
-        //console.log('El counter ha sido modificado.')
+        //console.log('Counter modificado.')
     }, [counter]);
 
     useEffect(() => {
         setTotal(calculateTotal(items));
-        //console.log('El item ha sido modificado.')
+        //console.log('Idem modificado.')
     }, [items]);
 
-    const handlerAddItems = ( product, price, quantity) => {
+    const handlerAddItems = ( {product, price, quantity }) => {
 
         //Objeto que contiene los datos del formulario.
         setItems ([...items,  {
@@ -69,12 +69,17 @@ export const InvoiceApp = () => {
             quantity: parseInt(quantity.trim(), 10) //Conversión a número
         } ]);
 
-        setCounter (counter+1); //Incrementar contador (id) para el siguiente producto.
-        }
+        setCounter(counter+1); //Incrementar contador (id) para el siguiente producto.
+    }
 
-        const onActiveForm = () => {
+    const handlerDeleteItem = (id) => {
+        setItems(items.filter (item => item.id !== id))
+
+    }
+
+    const onActiveForm = () => {
             setActiveForm(!activeForm)
-        }
+    }
     
     return (
         <>
@@ -101,7 +106,7 @@ export const InvoiceApp = () => {
                             </div>
                         </div>
 
-                        <ListItemsDetails title = "Productos de la factura:" items = { items }/>
+                        <ListItemsDetails title = "Productos de la factura:" items = { items } handlerDeleteItem = { id => handlerDeleteItem (id) } />
                         <TotalInvoice total = { total } />
 
                         <button className="btn btn-secondary"

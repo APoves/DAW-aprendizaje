@@ -31,9 +31,9 @@ export const FormItemsView = ( { handler } ) => {
         event.preventDefault();
 
         if (product.trim().length <= 1) return;
-        if (price.trim().length <= 1) return;
-        if (isNaN(price.trim())) {
-            alert('Error. El precio introducido no es un número.')
+        if (price.trim().length <= 0) return;
+        if (isNaN(price.trim()) || +price.trim() <= 0) {
+            alert('Error. El precio introducido debe ser un número mayor a 0.')
             return;
         }
         if (quantity.trim().length < 1) {

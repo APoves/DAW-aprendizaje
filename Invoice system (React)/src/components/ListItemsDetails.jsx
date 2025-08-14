@@ -1,7 +1,7 @@
 import { RowItemDetails } from "./RowItemDetails"
 import PropTypes from 'prop-types';
 
-export const ListItemsDetails = ({ title, items }) => {
+export const ListItemsDetails = ({ title, items, handlerDeleteItem }) => {
 
     return(
         <>
@@ -10,14 +10,22 @@ export const ListItemsDetails = ({ title, items }) => {
                 <thead>
                     <tr>
                         <th>Producto</th>
-                        <th type="number">Precio</th>
-                        <th type="number">Cantidad</th>
+                        <th>Precio</th>
+                        <th>Cantidad</th>
+                        <th>Eliminar</th>
                     </tr>
                 </thead>
 
                 <tbody>
                     { items.map(({id, product, price, quantity}) => (
-                        <RowItemDetails key = {id} product = {product} price = {price} quantity = {quantity} />
+                        <RowItemDetails
+                        key = {id}
+                        id = {id}
+                        product = {product}
+                        price = {price}
+                        quantity = {quantity}
+                        handlerDeleteItem = { id => handlerDeleteItem (id) }
+                        />
                     
                     ))}
                 </tbody>

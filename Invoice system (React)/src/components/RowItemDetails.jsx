@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-export const RowItemDetails = ({ product, price, quantity }) => {
+export const RowItemDetails = ({ id, product, price, quantity, handlerDeleteItem }) => {
 
     return(
         <>
@@ -7,6 +7,9 @@ export const RowItemDetails = ({ product, price, quantity }) => {
                 <td>{ product }</td>
                 <td>{ price }</td>
                 <td>{ quantity }</td>
+                <td><button
+                className = 'btn btn-danger'
+                onClick= {() => handlerDeleteItem(id)}>eliminar</button></td>
             </tr>
         </>
     )
