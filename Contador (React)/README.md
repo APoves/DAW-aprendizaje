@@ -1,6 +1,8 @@
-# Contador con React + Vite
+# Contador (useState, React + Vite)
 
-Este proyecto es un pequeño contador, realizado con React y Vite como ejercicio de aprendizaje personal.
+Miniproyecto de aprendizaje de useState con React.
+<br>
+Pequeño contador, realizado con React y Vite como ejercicio de aprendizaje personal.
 
 
 ## Tecnologías utilizadas:
