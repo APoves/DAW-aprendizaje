@@ -10,7 +10,7 @@ export const CartApp = () => {
                             <div className="card-body">
                                 <h5 className="card-title">La sombra del viento</h5>
                                 <p className="card-title">Carlos Ruiz Zafón</p>
-                                <p className="card-title">22.90€</p>
+                                <p className="card-title">22.90</p>
                                 <button className="btn btn-primary">Agregar producto</button>
                             </div>
                         </div>
@@ -21,7 +21,7 @@ export const CartApp = () => {
                             <div className="card-body">
                                 <h5 className="card-title">Diez negritos</h5>
                                 <p className="card-title">Agatha Christie</p>
-                                <p className="card-title">19.95€</p>
+                                <p className="card-title">19.95</p>
                                 <button className="btn btn-primary">Agregar producto</button>
                             </div>
                         </div>
@@ -32,7 +32,7 @@ export const CartApp = () => {
                             <div className="card-body">
                                 <h5 className="card-title">El asesinato de Pitágoras</h5>
                                 <p className="card-title">Marcos Chicot</p>
-                                <p className="card-title">23.50€</p>
+                                <p className="card-title">23.50</p>
                                 <button className="btn btn-primary">Agregar producto</button>
                             </div>
                         </div>
@@ -43,7 +43,7 @@ export const CartApp = () => {
                             <div className="card-body">
                                 <h5 className="card-title">El cuarto mono</h5>
                                 <p className="card-title">J.D. Barker</p>
-                                <p className="card-title">21.90€</p>
+                                <p className="card-title">21.90</p>
                                 <button className="btn btn-primary">Agregar producto</button>
                             </div>
                         </div>
@@ -54,7 +54,7 @@ export const CartApp = () => {
                             <div className="card-body">
                                 <h5 className="card-title">Los pilares de la tierra</h5>
                                 <p className="card-title">Ken Follet</p>
-                                <p className="card-title">18.75€</p>
+                                <p className="card-title">18.75</p>
                                 <button className="btn btn-primary">Agregar producto</button>
                             </div>
                         </div>
@@ -65,7 +65,7 @@ export const CartApp = () => {
                             <div className="card-body">
                                 <h5 className="card-title">El imperio final</h5>
                                 <p className="card-title">Brandon Sanderson</p>
-                                <p className="card-title">21.90€</p>
+                                <p className="card-title">21.90</p>
                                 <button className="btn btn-primary">Agregar producto</button>
                             </div>
                         </div>
