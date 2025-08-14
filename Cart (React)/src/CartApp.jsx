@@ -1,75 +1,36 @@
+import { useEffect, useState } from "react";
+import { getProducts } from "./services/productService"
+
 export const CartApp = () => {
+
+    const [ products, setProducts] = useState ([]);
+
+    useEffect(
+        () => {
+          setProducts(getProducts());
+        }, []);
+
     return (
         <>
+
             <div class="containter">
+
                 <h3>Cart App</h3>
                 <div className="row">
+                    {products.map(prod => (
 
-                    <div className="col-4 my-2">
-                        <div className="card">
-                            <div className="card-body">
-                                <h5 className="card-title">La sombra del viento</h5>
-                                <p className="card-title">Carlos Ruiz Zafón</p>
-                                <p className="card-title">22.90</p>
-                                <button className="btn btn-primary">Agregar producto</button>
+                        <div className="col-4 my-2" key = {prod.id }>
+                            <div className="card">
+                                <div className="card-body">
+                                    <h5 className="card-title"> { prod.name } </h5>
+                                    <p className="card-title"> { prod.description } </p>
+                                    <p className="card-title"> { prod.price } </p>
+                                    <button className="btn btn-primary">Agregar producto</button>
+                                </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div className="col-4 my-2">
-                        <div className="card">
-                            <div className="card-body">
-                                <h5 className="card-title">Diez negritos</h5>
-                                <p className="card-title">Agatha Christie</p>
-                                <p className="card-title">19.95</p>
-                                <button className="btn btn-primary">Agregar producto</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="col-4 my-2">
-                        <div className="card">
-                            <div className="card-body">
-                                <h5 className="card-title">El asesinato de Pitágoras</h5>
-                                <p className="card-title">Marcos Chicot</p>
-                                <p className="card-title">23.50</p>
-                                <button className="btn btn-primary">Agregar producto</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="col-4 my-2">
-                        <div className="card">
-                            <div className="card-body">
-                                <h5 className="card-title">El cuarto mono</h5>
-                                <p className="card-title">J.D. Barker</p>
-                                <p className="card-title">21.90</p>
-                                <button className="btn btn-primary">Agregar producto</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="col-4 my-2">
-                        <div className="card">
-                            <div className="card-body">
-                                <h5 className="card-title">Los pilares de la tierra</h5>
-                                <p className="card-title">Ken Follet</p>
-                                <p className="card-title">18.75</p>
-                                <button className="btn btn-primary">Agregar producto</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="col-4 my-2">
-                        <div className="card">
-                            <div className="card-body">
-                                <h5 className="card-title">El imperio final</h5>
-                                <p className="card-title">Brandon Sanderson</p>
-                                <p className="card-title">21.90</p>
-                                <button className="btn btn-primary">Agregar producto</button>
-                            </div>
-                        </div>
-                    </div>
+                    ))}
+                    
 
                 </div>
 

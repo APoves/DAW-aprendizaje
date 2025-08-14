@@ -8,7 +8,7 @@ export const products = [
 
     {
         id: 2,
-        name: '>Diez negritos',
+        name: 'Diez negritos',
         description: 'Agatha Christie',
         precio: 19.95
     },
