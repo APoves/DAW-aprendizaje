@@ -1,8 +1,18 @@
-import { CartDetails } from './components/CartDetails'
+import { useState } from "react"
+import { CartDetails } from "./components/CartDetails"
 import { CatalogDetails } from "./components/CatalogDetails"
+
+const initialCartItems = [
+    // {
+    //    product:  {id: 1},
+    //    quantity: 0,
+    //    total: 0
+    //}
+];
 
 export const CartApp = () => {
 
+    const [ cartItems, setCartItems ] = useState(initialCartItems);
     return (
         <>
 
@@ -12,7 +22,7 @@ export const CartApp = () => {
                 <CatalogDetails/>
 
                 <div className="my-4 w-50">
-                    <CartDetails/>
+                    <CartDetails items = { cartItems }/>
                 </div>
 
             </div>

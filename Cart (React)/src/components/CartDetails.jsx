@@ -1,5 +1,5 @@
 
-export const CartDetails = () => {
+export const CartDetails = ( { items } ) => {
 
     return (
 
@@ -16,13 +16,15 @@ export const CartDetails = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Nombre</td>
-                        <td>Precio</td>
-                        <td>Cantidad</td>
-                        <td>Total</td>
-                        <td>Eliminar</td>
-                    </tr>
+                    { items.map ( item =>(
+                        <tr key = { item.product.id } >
+                            <td> { item.product.name } </td>
+                            <td> { item.product.price } </td>
+                            <td> { item.quantity } </td>
+                            <td> { item.quantity * item.product.price } </td>
+                            <td>Eliminar</td>
+                        </tr>
+                    ))}
                 </tbody>
                 <tfoot>
                     <tr>
