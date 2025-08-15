@@ -17,6 +17,7 @@ export const CatalogDetails = () => {
                 {products.map(prod => (
                     <div className="col-4 my-2" key = {prod.id }>
                         <ProductCardDetails
+                        id = {prod.id}
                         name = { prod.name }
                         description = { prod.description}
                         price = { prod.price }

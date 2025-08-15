@@ -1,4 +1,9 @@
-export const ProductCardDetails = ( { name, description, price }) => {
+export const ProductCardDetails = ( { id, name, description, price }) => {
+    
+    const onAddProduct = (product) => {
+        console.log(product)
+    }
+
     return (
         <>
             <div className="card">
@@ -6,7 +11,8 @@ export const ProductCardDetails = ( { name, description, price }) => {
                     <h5 className="card-title"> { name } </h5>
                     <p className="card-title"> { description } </p>
                     <p className="card-title"> { price } </p>
-                    <button className="btn btn-primary">Agregar producto</button>
+                    <button className="btn btn-primary"
+                    onClick = { () => onAddProduct ({ id, name, description, price }) }>Agregar producto</button>
                 </div>
             </div>
         </>

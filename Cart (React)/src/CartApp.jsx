@@ -13,6 +13,12 @@ const initialCartItems = [
 export const CartApp = () => {
 
     const [ cartItems, setCartItems ] = useState(initialCartItems);
+
+    const handlerAddProductCart = (product) => {
+
+
+    }
+
     return (
         <>
 
