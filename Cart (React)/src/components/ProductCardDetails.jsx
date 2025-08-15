@@ -1,8 +1,9 @@
-export const ProductCardDetails = ( { id, name, description, price }) => {
+export const ProductCardDetails = ( { handler, id, name, description, price }) => {
     
     const onAddProduct = (product) => {
-        console.log(product)
-    }
+        console.log(product);
+        handler(product);
+    }  
 
     return (
         <>

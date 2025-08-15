@@ -2,7 +2,7 @@ import { useEffect, useState} from "react";
 import { getProducts } from "../services/productService"
 import { ProductCardDetails } from "./ProductCardDetails"
 
-export const CatalogDetails = () => {
+export const CatalogDetails = ( { handler} ) => {
 
     const [ products, setProducts ] = useState ([]);
 
@@ -17,6 +17,7 @@ export const CatalogDetails = () => {
                 {products.map(prod => (
                     <div className="col-4 my-2" key = {prod.id }>
                         <ProductCardDetails
+                        handler = { handler }
                         id = {prod.id}
                         name = { prod.name }
                         description = { prod.description}
