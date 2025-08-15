@@ -1,5 +1,15 @@
+import { useEffect, useState } from "react";
+import { calculateTotal } from "../services/productService";
 
 export const CartDetails = ( { handlerDelete, items } ) => {
+
+    const [ total, setTotal ] = useState(0);
+
+    { /* Cálculo del total (con reduce). El acumulador inicializa en 0, luego coge el valor del primer
+        producto y conforme itera, va recogiendo el valor de cada producto, los suma y los guarda. */}
+    useEffect(() => {
+        setTotal(calculateTotal(items));
+    }, [items]   )
 
     const onDeleteProduct = (id) => {
         //console.log('Producto eliminado.')
@@ -36,7 +46,7 @@ export const CartDetails = ( { handlerDelete, items } ) => {
                 <tfoot>
                     <tr>
                         <td colSpan="3" className="text-end fw-bold">Total</td>
-                        <td colSpan="2" className="text-start fw-bold">12345</td>
+                        <td colSpan="2" className="text-start fw-bold"> { total } </td>
                     </tr>
                 </tfoot>
             </table>
