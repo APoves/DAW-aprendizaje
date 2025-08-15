@@ -1,5 +1,10 @@
 
-export const CartDetails = ( { items } ) => {
+export const CartDetails = ( { handlerDelete, items } ) => {
+
+    const onDeleteProduct = (id) => {
+        //console.log('Producto eliminado.')
+        handlerDelete(id);
+    }
 
     return (
 
@@ -22,7 +27,9 @@ export const CartDetails = ( { items } ) => {
                             <td> { item.product.price } </td>
                             <td> { item.quantity } </td>
                             <td> { item.quantity * item.product.price } </td>
-                            <td>Eliminar</td>
+                            <td> <button
+                            className ="btn btn-danger"
+                            onClick = { () => onDeleteProduct (item.product.id) }> Eliminar </button> </td>
                         </tr>
                     ))}
                 </tbody>
