@@ -13,7 +13,7 @@ export const CartApp = () => {
 
     const [ cartItems, setCartItems ] = useState(initialCartItems);
 
-    //Añadir productos al carro:
+    {/* Agrega nuevos productos */}
     const handlerAddProductCart = (product) => {
         //Modificación de cantidades de producto (hay dos opciones)
         
@@ -82,11 +82,15 @@ export const CartApp = () => {
             <div className="container">
 
                 <h3>Cart App</h3>
-                <CatalogDetails handler = { product => handlerAddProductCart (product) } /> //Agrega nuevos productos.
+                <CatalogDetails handler = { product => handlerAddProductCart (product) } /> {/* Agrega nuevos productos */}
 
-                <div className="my-4 w-50">
-                    <CartDetails items = { cartItems } handlerDelete = {handlerDeleteProductCart}/>
-                </div>
+                {/* Ocultar carrito (con operador ternario) */}
+                { cartItems?.length <= 0 ||
+                (
+                    <div className="my-4 w-50">
+                        <CartDetails items = { cartItems } handlerDelete = {handlerDeleteProductCart}/>
+                    </div>
+                )}
 
             </div>
         </>
