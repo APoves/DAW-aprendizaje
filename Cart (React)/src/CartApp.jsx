@@ -4,7 +4,7 @@ import { useItemsCart } from "./hooks/useItemsCart"
 
 export const CartApp = () => {
 
-    const { handlerAddProductCart, handlerDeleteProductCart } = useItemsCart();
+    const { cartItems, handlerAddProductCart, handlerDeleteProductCart } = useItemsCart();
 
     return (
         <>
