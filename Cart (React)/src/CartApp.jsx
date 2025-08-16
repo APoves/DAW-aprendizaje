@@ -2,12 +2,7 @@ import { useState } from "react"
 import { CartDetails } from "./components/CartDetails"
 import { CatalogDetails } from "./components/CatalogDetails"
 
-const initialCartItems = [
-    // {
-    //    product:  {id: 1},
-    //    quantity: 0,
-    //}
-];
+const initialCartItems = JSON.parse(sessionStorage.getItem('cart')) || [];
 
 export const CartApp = () => {
 

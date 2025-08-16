@@ -9,6 +9,7 @@ export const CartDetails = ( { handlerDelete, items } ) => {
         producto y conforme itera, va recogiendo el valor de cada producto, los suma y los guarda. */}
     useEffect(() => {
         setTotal(calculateTotal(items));
+        sessionStorage.setItem("cart", JSON.stringify(items));
     }, [items]   )
 
     const onDeleteProduct = (id) => {
