@@ -65,7 +65,6 @@ export const CartApp = () => {
     const handlerDeleteProductCart = (id) => {
         setCartItems ([
             ...cartItems.filter((i) => i.product.id !== id),
-
         ])
     }
 
