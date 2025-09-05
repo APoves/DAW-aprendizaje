@@ -1,5 +1,5 @@
 import { useEffect, useReducer } from "react";
-import { itemsReducer } from "../reducer/ItemsReducer";
+import { itemsReducer } from "../reducer/itemsReducer";
 import { AddProductCart, DeleteProductCart, UpdateQuantityProductCart } from "../reducer/itemsActions";
 
 const initialCartItems = JSON.parse(sessionStorage.getItem('cart')) || [];
@@ -83,4 +83,4 @@ export const useItemsCart = () => {
         handlerAddProductCart,
         handlerDeleteProductCart,
     }
-}
+} 
