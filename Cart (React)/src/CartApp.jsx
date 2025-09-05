@@ -1,4 +1,4 @@
-import { NavBar } from "./components/NavBar";
+import { Navbar } from "./components/NavBar";
 import { useItemsCart } from "./hooks/useItemsCart"
 import { CartRoutes } from "./routes/CartRoutes";
 

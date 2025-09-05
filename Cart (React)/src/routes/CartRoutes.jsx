@@ -1,4 +1,4 @@
-import { Navigate, Rout, Routes } from "react-router-dom"
+import { Navigate, Route, Routes } from "react-router-dom"
 import { CartDetails } from "../components/CartDetails"
 import { CatalogDetails } from "../components/CatalogDetails"
 
