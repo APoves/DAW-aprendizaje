@@ -2,6 +2,7 @@ import { Navigate, Route, Routes } from "react-router-dom"
 import { CartDetails } from "./components/CartDetails"
 import { CatalogDetails } from "./components/CatalogDetails"
 import { useItemsCart } from "./hooks/useItemsCart"
+import { Navbar } from "./components/Navbar"
 
 export const CartApp = () => {
 
@@ -9,6 +10,8 @@ export const CartApp = () => {
 
   return (
     <>
+      <Navbar />
+
       <div className="container my-4">
 
         <h3>Cart App</h3>
@@ -22,7 +25,7 @@ export const CartApp = () => {
 
           <Route path = "cart" element = {(
             cartItems?.length <= 0 ?
-              <div className="alert alert-info my-4 w-50 text-center"> No hay productos en el carro de compra.</div>
+              <div className="alert alert-warning my-4 w-50 text-center"> No hay productos en el carro de compra.</div>
               :
             (
               <div className="my-4 w-50">
