@@ -1,9 +1,13 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 import { calculateTotal } from "../services/productService";
+
 
 export const CartDetails = ( { handlerDelete, items } ) => {
 
     const [ total, setTotal ] = useState(0);
+    const navigate = useNavigate();
 
     { /* Cálculo del total (con reduce). El acumulador inicializa en 0, luego coge el valor del primer
         producto y conforme itera, va recogiendo el valor de cada producto, los suma y los guarda. */}
@@ -15,6 +19,10 @@ export const CartDetails = ( { handlerDelete, items } ) => {
     const onDeleteProduct = (id) => {
         //console.log('Producto eliminado.')
         handlerDelete(id);
+    }
+
+    const onCatalog = () => {
+        navigate ('/catalog');
     }
 
     return (
@@ -51,6 +59,12 @@ export const CartDetails = ( { handlerDelete, items } ) => {
                     </tr>
                 </tfoot>
             </table>
+
+            <button
+                className="btn btn-success"
+                onClick = { onCatalog }
+            >Seguir comprando</button>
+
         </>
     )
 
