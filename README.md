@@ -4,9 +4,11 @@
 
 | Proyecto | Enlace | Tecnologías utilizadas |
 | ----------- | ----------- | ----------- |
-| Formulario venta de entradas |[📂]([https://github.com/APoves/Repo/tree/main/01%20Cat%20Photo%20App](https://github.com/APoves/DAW-aprendizaje/tree/main/Formulario%20venta%20entradas))| Almacenamiento en localStorage (JavaScript) |
-| Contador |[📂](https://github.com/APoves/DAW-aprendizaje/tree/main/Contador%20(React))| JavaScript, React y Vite |
-| Facturación |[📂](https://github.com/APoves/DAW-aprendizaje/tree/main/Invoice%20system%20(React))| JavaScript, React, Vite y Bootstrap |
+| Formulario venta de entradas | [📂](https://github.com/APoves/DAW-aprendizaje/tree/main/Formulario%20venta%20entradas)) | Almacenamiento en localStorage (JavaScript) |
+| Contador | [📂](https://github.com/APoves/DAW-aprendizaje/tree/main/Contador%20(React)) | JavaScript, React |
+| Invoice system (Facturación) | [📂](https://github.com/APoves/DAW-aprendizaje/tree/main/Invoice%20system%20(React)) | JavaScript, React, Vite |
+| Cart (Carrito de compras) | [📂](https://github.com/APoves/DAW-aprendizaje/tree/main/Cart%20(React)) | JavaScript, React, Vite, React Router DOM |
+
 
 
 <br>
@@ -16,8 +18,9 @@ Hasta la fecha, se incluyen varias carpetas con proyectos y prácticas:
 
 - **`Contador (React)`**: Mini-proyecto personal sencillo para aprendizaje. Contador realizado con React y Vite, para aprender hooks y gestión de estado.
 
-- **`Aplicación web de facturación`**: Proyecto de aprendizaje. Realización de sistema de facturación.
+- **`Aplicación de Facturación`**: Proyecto de aprendizaje. Realización de sistema de facturación.
 
+- **`Carrito de compras`**: Proyecto de aprendizaje. Realización de un carrito de compras (con catálogo y sistema de facturación).
 
 ---
 
@@ -29,9 +32,6 @@ Hasta la fecha, se incluyen varias carpetas con proyectos y prácticas:
 
 ---
 
-
-
-
 ## Tecnologías usadas
 
 - JavaScript (ES6+).
@@ -41,7 +41,7 @@ Hasta la fecha, se incluyen varias carpetas con proyectos y prácticas:
 - Bootstrap.
 - Git / GitHub.
 
-
+---
 
 ## Contribuciones
   Repositorio de uso personal para aprendizaje y documentación.
