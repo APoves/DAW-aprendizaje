@@ -66,14 +66,30 @@ Permite navegar entre un catálogo de productos y un carrito, agregar y eliminar
 
 - **Bootstrap**
 
+
 ---
 
- Vista previa
+## Vista previa del proyecto y funcionamiento:
 
-- **Catálogo de productos:** → Lista de productos con botón para agregar al carrito.
+<div align="center">
 
-- **Carrito lleno** → Tabla con productos, cantidades y total dinámico.
+### Catálogo de productos:
+<img src="https://raw.githubusercontent.com/APoves/DAW-aprendizaje/main/Cart%20(React)/src/assets/products.png" alt="Productos" width="600" style="margin: 10px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
 
-- **Carrito vacío** → Mensaje informativo sobre el estado del carrito de compras.
+### Carrito lleno:
+<img src="https://raw.githubusercontent.com/APoves/DAW-aprendizaje/main/Cart%20(React)/src/assets/cart-full.png" alt="Carrito lleno" width="600" style="margin: 10px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
 
-- **Vídeo demo** → demostración del funcionamiento completo del proyecto.
+### Carrito vacío:
+<img src="https://raw.githubusercontent.com/APoves/DAW-aprendizaje/main/Cart%20(React)/src/assets/cart-empty.png" alt="Carrito vacío" width="600" style="margin: 10px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+
+</div>
+
+---
+
+## Demo en vídeo
+
+<div align="center">
+<video width="600" controls style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+  <source src="https://raw.githubusercontent.com/APoves/DAW-aprendizaje/main/Cart%20(React)/src/assets/demo-CartApp.mp4" type="video/mp4">
+</video>
+</div>
