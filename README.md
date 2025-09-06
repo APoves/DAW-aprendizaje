@@ -4,7 +4,7 @@
 
 | Proyecto | Enlace | Tecnologías utilizadas |
 | ----------- | ----------- | ----------- |
-| Formulario venta de entradas | [📂](https://github.com/APoves/DAW-aprendizaje/tree/main/Formulario%20venta%20entradas) | JavasCript (almacenamiento en localStorage) |
+| Formulario venta de entradas | [📂](https://github.com/APoves/DAW-aprendizaje/tree/main/Formulario%20venta%20entradas) | JavaScript |
 | Contador | [📂](https://github.com/APoves/DAW-aprendizaje/tree/main/Contador%20(React)) | JavaScript, React |
 | Invoice system (Facturación) | [📂](https://github.com/APoves/DAW-aprendizaje/tree/main/Invoice%20system%20(React)) | JavaScript, React, Vite |
 | Cart (Carrito de compras) | [📂](https://github.com/APoves/DAW-aprendizaje/tree/main/Cart%20(React)) | JavaScript, React, Vite, React Router DOM |
