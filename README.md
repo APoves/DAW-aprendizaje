@@ -8,7 +8,7 @@
 | Contador | [📂](https://github.com/APoves/DAW-aprendizaje/tree/main/Contador%20(React)) | JavaScript, React |
 | Invoice system (Facturación) | [📂](https://github.com/APoves/DAW-aprendizaje/tree/main/Invoice%20system%20(React)) | JavaScript, React, Vite |
 | Cart (Carrito de compras) | [📂](https://github.com/APoves/DAW-aprendizaje/tree/main/Cart%20(React)) | JavaScript, React, Vite, React Router DOM |
-| UserHub + Login (en proceso de desarrollo) | [📂](https://github.com/APoves/DAW-aprendizaje/tree/main/UserHubLogin%20(React)) | |
+| UserHub + Login (EN DESARROLLO) | [📂](https://github.com/APoves/DAW-aprendizaje/tree/main/UserHubLogin%20(React)) |  JavaScript, React |
 
 
 
