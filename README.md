@@ -4,7 +4,7 @@
 
 | Proyecto | Enlace | Tecnologías utilizadas |
 | ----------- | ----------- | ----------- |
-| Formulario venta de entradas | [📂](https://github.com/APoves/DAW-aprendizaje/tree/main/Formulario%20venta%20entradas)) | Almacenamiento en localStorage (JavaScript) |
+| Formulario venta de entradas | [📂](https://github.com/APoves/DAW-aprendizaje/tree/main/Formulario%20venta%20entradas)) | JavasCript (almacenamiento en localStorage) |
 | Contador | [📂](https://github.com/APoves/DAW-aprendizaje/tree/main/Contador%20(React)) | JavaScript, React |
 | Invoice system (Facturación) | [📂](https://github.com/APoves/DAW-aprendizaje/tree/main/Invoice%20system%20(React)) | JavaScript, React, Vite |
 | Cart (Carrito de compras) | [📂](https://github.com/APoves/DAW-aprendizaje/tree/main/Cart%20(React)) | JavaScript, React, Vite, React Router DOM |
@@ -20,7 +20,7 @@ Hasta la fecha, se incluyen varias carpetas con proyectos y prácticas:
 
 - **`Aplicación de Facturación`**: Proyecto de aprendizaje. Realización de sistema de facturación.
 
-- **`Carrito de compras`**: Proyecto de aprendizaje. Realización de un carrito de compras (con catálogo y sistema de facturación).
+- **`Carrito de compras`**: Proyecto de aprendizaje. Realización de un carrito de compras (con catálogo y sistema de facturación, con persistencia en sessionStorage).
 
 ---
 
