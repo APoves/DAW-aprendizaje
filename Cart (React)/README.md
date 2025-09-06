@@ -57,10 +57,4 @@ Permite navegar entre un catálogo de productos y un carrito, agregar y eliminar
 
 ---
 
-## Demo en vídeo
-
-<div align="center">
-<video width="600" controls style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
-  <source src="https://raw.githubusercontent.com/APoves/DAW-aprendizaje/main/Cart%20(React)/src/assets/demo-CartApp.gif" type="img/gif">
-</video>
-</div>
+![Demo CartApp](https://raw.githubusercontent.com/APoves/DAW-aprendizaje/main/Cart%20(React)/src/assets/demo-CartApp.gif)
