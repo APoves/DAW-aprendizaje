@@ -1,6 +1,7 @@
 # CartApp - Carrito de compra
 
 Aplicación sencilla de carrito de compras desarrollada con **React** y **React Router**.  
+<br>
 Permite navegar entre un catálogo de productos y un carrito, agregar y eliminar productos, y calcular el total de la compra.
 
 ---
@@ -28,44 +29,14 @@ Permite navegar entre un catálogo de productos y un carrito, agregar y eliminar
 - **`hooks/useItemsCart.js`** → Custom Hook para gestionar el estado del carrito (añadir/eliminar).  
 - **`data/products.js`** → Lista de productos de ejemplo.
 
-
-.
-├─ README.md
-├─ package.json
-
-└─ src/
-├─ CartApp.jsx
-├─ assets/
-│ ├─ products.png
-│ ├─ cart-full.png
-│ ├─ cart-empty.png
-│ └─ demo.mp4
-├─ routes/
-│ └─ CartRoutes.jsx
-├─ services/
-│ └─ productService.js
-├─ hooks/
-│ └─ useItemsCart.js
-├─ data/
-│ └─ products.js
-└─ components/
-├─ Navbar.jsx
-├─ CatalogDetails.jsx
-├─ ProductCardDetails.jsx
-└─ CartDetails.jsx
-
 ---
 
 ## Tecnologías utilizadas:
 
 - **React**
-
 - **Vite**
-
 - **React Router DOM**
-
 - **Bootstrap**
-
 
 ---
 
