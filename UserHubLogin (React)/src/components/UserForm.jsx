@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 
-const initialUSerForm = {
+const initialUserForm = {
     username: '',
     password: '',
     email: '',
@@ -9,7 +9,7 @@ const initialUSerForm = {
 
 export const UserForm = () => {
 
-    const [ userForm, setUserForm ] = useState (initialUSerForm);
+    const [ userForm, setUserForm ] = useState (initialUserForm);
 
     const { username, password, email } = userForm;
 
@@ -21,10 +21,22 @@ export const UserForm = () => {
             [ name ] : value,
         })
     }
+
+    const onSubmit = (event) => {
+        event.preventDefault(); // Para evitar que cuando se envíe el formulario no se recargue la página //
+        if( !username || !password || !email ) {
+            alert('Los campos del formulario deben estar rellenos');
+            return;
+        }
+        console.log(userForm)
+        
+        //Para guardar el formulario de usuario en el listado de usuarios.
+        setUserForm(initialUserForm);
+    }
     
     return (
 
-            <form>
+            <form onSubmit = { onSubmit } >
                 <input 
                 className= "form-control my-3 w-75"
                 placeholder ="Username"
