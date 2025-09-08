@@ -24,6 +24,14 @@ export const UsersApp = () => {
             })
     }
 
+    const handlerRemoveUser = (id) => {
+        //console.log(id);
+        dispatch ( {
+            type: 'removeUser',
+            payload: id,
+        })
+    }
+
     return (
         <div className = "container my-4">
             <h2>Users App</h2>
@@ -35,6 +43,7 @@ export const UsersApp = () => {
 
                 <div className ="col">
                     <UsersList
+                        handlerRemoveUser= { handlerRemoveUser }
                         users = { users } />
                 </div>
 
