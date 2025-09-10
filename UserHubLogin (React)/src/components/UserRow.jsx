@@ -1,9 +1,5 @@
 
-export const UserRow = ({ handlerRemoveUser, id, username, email }) => {
-
-    const onRemoveUser = (id) => {
-        handlerRemoveUser(id);
-    } 
+export const UserRow = ({ handlerUserSelectedForm, handlerRemoveUser, id, username, email, password }) => {
 
     return (
         <tr>
@@ -14,6 +10,12 @@ export const UserRow = ({ handlerRemoveUser, id, username, email }) => {
                 <button
                     type = "button"  //Es button del tipo button porque queremos un botón con evento onClick. Si se quiere enviar, sería tipo submit. // 
                     className = "btn btn-secondary btn-sm"
+                    onClick = { () => handlerUserSelectedForm({
+                        id: id,
+                        username: username,
+                        email: email,
+                        password
+                    }) }
                 >
                     Update
                 </button>
@@ -22,7 +24,7 @@ export const UserRow = ({ handlerRemoveUser, id, username, email }) => {
                 <button
                     type = "button"  //Es button del tipo button porque queremos un botón con evento onClick. Si se quiere enviar, sería tipo submit. // 
                     className = "btn btn-danger btn-sm"
-                    onClick = { () => onRemoveUser(id) }
+                    onClick = { () => handlerRemoveUser(id) }
                 >
                     Remove
                 </button>
