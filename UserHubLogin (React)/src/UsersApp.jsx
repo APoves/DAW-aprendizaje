@@ -12,6 +12,12 @@ const initialUsers = [
     },
 ];
 
+const initialUserForm = {
+    username: '',
+    password: '',
+    email: '',
+}
+
 export const UsersApp = () => {
 
     const [ users, dispatch ] = useReducer ( usersReducer, initialUsers );
@@ -37,14 +43,20 @@ export const UsersApp = () => {
             <h2>Users App</h2>
             <div className ="row">
                 <div className ="col">
-                    <UserForm 
+                    <UserForm
+                    initialUserForm = { initialUserForm }
                     handlerAddUser = { handlerAddUser } />
                 </div>
 
                 <div className ="col">
-                    <UsersList
-                        handlerRemoveUser= { handlerRemoveUser }
-                        users = { users } />
+                    {
+                        users.length === 0
+                        ? <div  className = "alert alert-warning"> No hay usuarios en el sistema. </div>
+                        : <UsersList
+                            handlerRemoveUser = { handlerRemoveUser }
+                            users = { users } 
+                            />
+                    }
                 </div>
 
             </div>
