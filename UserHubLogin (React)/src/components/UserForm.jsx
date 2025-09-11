@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useEffect } from "react";
+import Swal from "sweetalert2";
 
 export const UserForm = ( { userSelected, handlerAddUser, initialUserForm }) => {
 
@@ -26,7 +27,12 @@ export const UserForm = ( { userSelected, handlerAddUser, initialUserForm }) => 
     const onSubmit = (event) => {
         event.preventDefault(); // Para evitar que cuando se envíe el formulario no se recargue la página //
         if( !username || ( !password && id === 0 ) || !email ) {
-            alert('Los campos del formulario deben estar rellenos');
+            Swal.fire(
+                'Error',
+                'Los campos del formulario deben estar rellenos.',
+                'error'
+            );
+            
             return;
         }
         //console.log(userForm)
