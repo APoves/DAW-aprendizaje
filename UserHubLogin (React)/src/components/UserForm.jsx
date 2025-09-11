@@ -10,7 +10,7 @@ export const UserForm = ( { userSelected, handlerAddUser, initialUserForm }) => 
     useEffect ( () => {
         setUserForm ( {
             ...userSelected,
-            //password: '',
+            password: '',
         } );
     }, [userSelected]);
 
@@ -25,14 +25,14 @@ export const UserForm = ( { userSelected, handlerAddUser, initialUserForm }) => 
 
     const onSubmit = (event) => {
         event.preventDefault(); // Para evitar que cuando se envíe el formulario no se recargue la página //
-        if( !username || !password || !email ) {
+        if( !username || ( !password && id === 0 ) || !email ) {
             alert('Los campos del formulario deben estar rellenos');
             return;
         }
         //console.log(userForm)
         
         //Para guardar el formulario de usuario en el listado de usuarios.
-        handlerAddUser ( userForm);
+        handlerAddUser (userForm);
         setUserForm(initialUserForm);
     }
     
@@ -45,19 +45,22 @@ export const UserForm = ( { userSelected, handlerAddUser, initialUserForm }) => 
                 name = "username"
                 value = { username }
                 onChange = { onInputChange } />
-                <input 
+
+            { id > 0 || <input 
                 className= "form-control my-3 w-75"
                 placeholder ="Password"
                 type = "password"
                 name = "password"
                 value = { password }
-                onChange = { onInputChange } />
-                <input 
+                onChange = { onInputChange } />}
+
+            <input 
                 className= "form-control my-3 w-75"
                 placeholder ="Email"
                 name = "email" 
                 value = { email }
                 onChange = { onInputChange } />
+
             <input type = "hidden"
                 name = "id"
                 valur = {id} />

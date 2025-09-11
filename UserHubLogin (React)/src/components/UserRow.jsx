@@ -1,5 +1,5 @@
 
-export const UserRow = ({ handlerUserSelectedForm, handlerRemoveUser, id, username, email, password }) => {
+export const UserRow = ({ handlerUserSelectedForm, handlerRemoveUser, id, username, email }) => {
 
     return (
         <tr>
@@ -14,7 +14,6 @@ export const UserRow = ({ handlerUserSelectedForm, handlerRemoveUser, id, userna
                         id: id,
                         username: username,
                         email: email,
-                        password
                     }) }
                 >
                     Update
