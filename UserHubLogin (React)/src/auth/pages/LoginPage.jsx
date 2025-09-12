@@ -7,7 +7,7 @@ const initialLoginForm = {
     password: ''
 }
 
-export const LoginPage = () => {
+export const LoginPage = ({ handlerLogin }) => {
 
     const [ loginForm, setLoginForm] = useState(initialLoginForm);
 
@@ -23,18 +23,13 @@ export const LoginPage = () => {
 
     const onSubmit = (event) => {
         event.preventDefault();
-        if(!username || password) {
+        if(!username || !password) {
             Swal.fire('Error', 'Nombre de usuario y password requeridos.', 'error');
         }
 
         //aquí se implementa el login
-        if(username === 'admin' && password === '12345') {
-            //Swal.fire('Login correcto.', 'Bienvenido al sistema', 'success');
-            //setLoginForm(initialLoginForm);
-            //handlerLogin();
-        } else {
-            Swal.fire('Error de autenticación', 'Nombre de usuario o password no válido.', 'error');
-        }
+        handlerLogin( { username, password } );
+
         setLoginForm(initialLoginForm); //Reinicio de datos del formulario
     }
 
