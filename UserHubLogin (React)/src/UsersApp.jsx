@@ -3,6 +3,7 @@ import Swal from "sweetalert2";
 import { loginReducer } from "./auth/reducers/loginReducer";
 import { LoginPage } from "./auth/pages/LoginPage";
 import { UsersPage } from "./pages/UsersPage";
+import { Navbar } from "./components/layout/Navbar";
 
 const initialLogin = JSON.parse(sessionStorage.getItem('login')) ||  {
         isAuthenticated: false,
@@ -42,8 +43,13 @@ export const UsersApp = () => {
     return (
         <>
         { login.isAuthenticated
-            ? <UsersPage />
-            : <LoginPage handlerLogin = { handlerLogin} />            
+            ? (
+                <>  
+                    <Navbar login = { login } handlerLogout = { handlerLogout }/>      
+                    <UsersPage />
+                </>
+            )
+            : <LoginPage handlerLogin = { handlerLogin } />            
         }
         </>
     );
