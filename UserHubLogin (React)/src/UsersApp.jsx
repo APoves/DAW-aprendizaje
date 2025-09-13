@@ -32,6 +32,13 @@ export const UsersApp = () => {
         }
     }
 
+    const handlerLogout = () => {
+        dispatch({
+            type: 'logout',
+        });
+        sessionStorage.removeItem('login');
+    }
+
     return (
         <>
         { login.isAuthenticated
