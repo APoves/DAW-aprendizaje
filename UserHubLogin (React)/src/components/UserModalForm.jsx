@@ -1,6 +1,11 @@
 import { UserForm } from "./UserForm";
+import { UserContext } from "../context/UserContext";
+import { useContext } from "react";
 
-export const UserModalForm = ({ userSelected, initialUserForm, handlerAddUser, handlerCloseForm }) => {
+
+export const UserModalForm = () => {
+
+    const { userSelected, handlerCloseForm } = useContext(UserContext);
 
     return (
         <div className = "Abrir-modal animacion fadeIn">
@@ -14,9 +19,7 @@ export const UserModalForm = ({ userSelected, initialUserForm, handlerAddUser, h
                         </div>
                         <div className = "modal-body">
                             <UserForm
-                                initialUserForm = { initialUserForm }
                                 userSelected = { userSelected }
-                                handlerAddUser = { handlerAddUser }
                                 handlerCloseForm = { handlerCloseForm }
                             />
                         </div>
