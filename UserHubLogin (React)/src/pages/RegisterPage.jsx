@@ -1,19 +1,28 @@
+import { useEffect, useState } from "react"
+import { useParams } from "react-router-dom";
 import { UserForm } from "../components/UserForm"
-import { useState } from "react"
 
-export const RegisterPage = ({ handlerAddUser, initialUserForm }) => {
+export const RegisterPage = ({ users=[], handlerAddUser, initialUserForm }) => {
 
-    const [ userSelected, setUserSelecter] = useState(initialUserForm);
+    const [userSelected, setUserSelected] = useState(initialUserForm);
+
+    const { id } = useParams();
+
+    useEffect(() => {
+        console.log(id);
+        const user = users.find(u => u.id == id) || initialUserForm;
+        setUserSelected(user);
+    }, [id])
 
     return (
-        <div className = "container my-4">
-            <h4>Registro de usuarios</h4>
+        <div className="container my-4">
+            <h4>{ userSelected.id > 0 ? 'Editar' : 'Registrar'} usuario</h4>
             <div className="row">
                 <div className="col">
                     <UserForm
-                        userSelecter = { userSelected }
-                        handlerAddUser = { handlerAddUser }
-                        initialUserForm = { initialUserForm } />
+                        userSelected={userSelected}
+                        handlerAddUser={handlerAddUser}
+                        initialUserForm={initialUserForm} />
                 </div>
             </div>
         </div>

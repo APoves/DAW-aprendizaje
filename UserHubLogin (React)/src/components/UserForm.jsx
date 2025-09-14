@@ -74,19 +74,20 @@ export const UserForm = ( { userSelected, handlerAddUser, initialUserForm, handl
 
             <input type = "hidden"
                 name = "id"
-                valur = {id} />
+                value = {id} />
                 <button
                 className = "btn btn-primary"
                 type= "Submit">
                     { id > 0 ? 'Editar usuario' : 'Crear usuario' }
                 </button>
-                <button
-                    className = "btn btn-primary mx-2"
-                    type = "button"
-                    onClick = { () => onCloseForm()}>
-                        Cerrar formulario
-                </button>
-            </form>
 
+                { !handlerCloseForm || <button
+                        className = "btn btn-primary mx-2"
+                        type = "button"
+                        onClick = { () => onCloseForm()}>
+                            Cerrar formulario
+                    </button>
+                }
+            </form>
     )
 }

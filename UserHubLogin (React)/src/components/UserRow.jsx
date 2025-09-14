@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 
 export const UserRow = ({ handlerUserSelectedForm, handlerRemoveUser, id, username, email }) => {
 
@@ -8,7 +9,7 @@ export const UserRow = ({ handlerUserSelectedForm, handlerRemoveUser, id, userna
             <td> { email } </td>
             <td>
                 <button
-                    type = "button"  //Es button del tipo button porque queremos un botón con evento onClick. Si se quiere enviar, sería tipo submit. // 
+                    type = "button" 
                     className = "btn btn-secondary btn-sm"
                     onClick = { () => handlerUserSelectedForm({
                         id: id,
@@ -20,8 +21,14 @@ export const UserRow = ({ handlerUserSelectedForm, handlerRemoveUser, id, userna
                 </button>
             </td>
             <td>
+                <NavLink className = {'btn btn-secondary btn-sm'}
+                    to = {'/users/edit/' + id}>
+                    Update route
+                </NavLink>
+            </td>
+            <td>
                 <button
-                    type = "button"  //Es button del tipo button porque queremos un botón con evento onClick. Si se quiere enviar, sería tipo submit. // 
+                    type = "button"
                     className = "btn btn-danger btn-sm"
                     onClick = { () => handlerRemoveUser(id) }
                 >
