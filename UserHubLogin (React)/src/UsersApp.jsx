@@ -1,27 +1,22 @@
-
+import { useContext } from 'react'
+import { AuthContext } from './auth/context/AuthContext'
 import { LoginPage } from "./auth/pages/LoginPage";
-import { useAuthentication } from "./auth/hooks/UseAuthentication";
 import { Route, Routes, Navigate } from "react-router-dom";
 import { UserRoutes } from "./routes/UserRoutes";
 
 export const UsersApp = () => {
 
-    const { login, handlerLogin, handlerLogout } = useAuthentication();
+    const { login } = useContext(AuthContext);
 
     return (
         <Routes>
         { 
             login.isAuthenticated
                 ? (
-                    <Route path = '/*' element = { <UserRoutes 
-                        login = { login }
-                        handlerLogout = { handlerLogout }
-                    /> } />
+                    <Route path = '/*' element = { <UserRoutes /> } />
                 )
                 : <>
-                    <Route path = '/login' 
-                    element = { <LoginPage 
-                    handlerLogin = { handlerLogin } />} />
+                    <Route path = '/login' element = { <LoginPage />} />
                     <Route path = '/*' element = { <Navigate to = "/login" /> } />
                 </>            
         }
