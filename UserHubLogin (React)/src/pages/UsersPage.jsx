@@ -30,7 +30,7 @@ export const UsersPage = () => {
                         }
 
                         {
-                            users.length === 0
+                            users.length === 0 && !visibleForm
                             ? <div  className = "alert alert-warning"> No hay usuarios en el sistema. </div>
                             : <UsersList/>
                         }

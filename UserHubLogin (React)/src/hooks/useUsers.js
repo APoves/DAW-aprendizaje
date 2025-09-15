@@ -6,9 +6,9 @@ import { useNavigate } from "react-router-dom";
 const initialUsers = [
     {
         id: 1,
-        username: 'Aurora',
+        username: 'admin',
         password: '12345',
-        email: 'aurora@correo.com'
+        email: 'admin@correo.com'
     },
 ];
 
@@ -56,7 +56,7 @@ export const useUsers = () => {
 
         Swal.fire({
             title: '¿Seguro que desea eliminar el usuario?',
-            text: 'Cuidado, el usuario será eliminado permanentemente',
+            text: 'El usuario será eliminado permanentemente.',
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',

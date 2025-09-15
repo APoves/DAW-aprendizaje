@@ -46,8 +46,6 @@ export const UserForm = ( { userSelected, handlerCloseForm }) => {
             
             return;
         }
-
-        //console.log(userForm)
         
         //Para guardar el formulario de usuario en el listado de usuarios.
         handlerAddUser (userForm);
@@ -64,14 +62,14 @@ export const UserForm = ( { userSelected, handlerCloseForm }) => {
             <form onSubmit = { onSubmit } >
                 <input 
                 className= "form-control my-3 w-75"
-                placeholder ="Username"
+                placeholder ="Nombre de usuario"
                 name = "username"
                 value = { username }
                 onChange = { onInputChange } />
 
             { id > 0 || <input 
                 className= "form-control my-3 w-75"
-                placeholder ="Password"
+                placeholder ="Contraseña"
                 type = "password"
                 name = "password"
                 value = { password }
@@ -79,7 +77,7 @@ export const UserForm = ( { userSelected, handlerCloseForm }) => {
 
             <input 
                 className= "form-control my-3 w-75"
-                placeholder ="Email"
+                placeholder ="Correo electrónico"
                 name = "email" 
                 value = { email }
                 onChange = { onInputChange } />
@@ -88,13 +86,13 @@ export const UserForm = ( { userSelected, handlerCloseForm }) => {
                 name = "id"
                 value = {id} />
                 <button
-                className = "btn btn-primary"
+                className = "btn btn-success"
                 type= "Submit">
                     { id > 0 ? 'Editar usuario' : 'Crear usuario' }
                 </button>
 
                 { !handlerCloseForm || <button
-                        className = "btn btn-primary mx-2"
+                        className = "btn btn-secondary mx-3"
                         type = "button"
                         onClick = { () => onCloseForm()}>
                             Cerrar formulario

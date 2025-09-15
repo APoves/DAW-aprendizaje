@@ -15,11 +15,11 @@ export const UsersList = () => {
             <thead>
                 <tr>
                     <th>#</th>
-                    <th>Username</th>
-                    <th>Email</th>
-                    <th>Update</th>
-                    <th>Update route</th>
-                    <th>Remove</th>
+                    <th>Usuario</th>
+                    <th>Correo electrónico</th>
+                    <th>Actualizar</th>
+                    <th>Actualizar ruta</th>
+                    <th>Eliminar</th>
                 </tr>
             </thead>
 

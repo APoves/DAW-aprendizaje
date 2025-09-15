@@ -21,13 +21,13 @@ export const UserRow = ({ id, username, email }) => {
                         email: email,
                     }) }
                 >
-                    Update
+                    Actualizar
                 </button>
             </td>
             <td>
                 <NavLink className = {'btn btn-secondary btn-sm'}
                     to = {'/users/edit/' + id}>
-                    Update route
+                    Actualizar ruta
                 </NavLink>
             </td>
             <td>
@@ -36,7 +36,7 @@ export const UserRow = ({ id, username, email }) => {
                     className = "btn btn-danger btn-sm"
                     onClick = { () => handlerRemoveUser(id) }
                 >
-                    Remove
+                    Eliminar
                 </button>
             </td>
         </tr>

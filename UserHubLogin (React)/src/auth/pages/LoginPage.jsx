@@ -30,7 +30,6 @@ export const LoginPage = () => {
             Swal.fire('Error', 'Nombre de usuario y password requeridos.', 'error');
         }
 
-        //aquí se implementa el login
         handlerLogin( { username, password } );
 
         setLoginForm(initialLoginForm); //Reinicio de datos del formulario
@@ -54,7 +53,7 @@ export const LoginPage = () => {
                         />
                         <input 
                         className="form-control my-3 w-75"
-                        placeholder="Password"
+                        placeholder="Contraseña"
                         type="password"
                         name="password"
                         value= { password }
