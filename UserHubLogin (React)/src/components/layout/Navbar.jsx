@@ -6,7 +6,7 @@ export const Navbar = () => {
   const { login, handlerLogout } = useContext(AuthContext);
 
   return (
-    <nav className="navbar navbar-expand-lg bg-body-tertiary">
+    <nav className="navbar navbar-expand-lg bg-body-secondary">
       <div className="container-fluid">
         <a className="navbar-brand" href="#">UsersApp</a>
 
