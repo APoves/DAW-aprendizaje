@@ -1,4 +1,4 @@
-package com.aurora.backend.cartapp.backend_cartapp.models.entitiesa;
+package com.aurora.backend.cartapp.backend_cartapp.models.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
