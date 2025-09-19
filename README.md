@@ -9,21 +9,24 @@
 | Sistema de facturación (Invoice System) | [📂](https://github.com/APoves/DAW-aprendizaje/tree/main/Invoice%20system%20(React)) | JavaScript, React, Vite |
 | Carrito de compras (Cart) | [📂](https://github.com/APoves/DAW-aprendizaje/tree/main/Cart%20(React)) | JavaScript, React, Vite, React Router DOM |
 | Login + sistema de usuarios (UserHub + Login) | [📂](https://github.com/APoves/DAW-aprendizaje/tree/main/UserHubLogin%20(React)) |  JavaScript, React |
-| Carrito de compras_Backend (Cart_backend) | [📂](https://github.com/APoves/DAW-aprendizaje/tree/main/UserHubLogin%20(React)) |  Java, Springboot |
+| Carrito de compras_Backend (Cart_backend) | [📂](https://github.com/APoves/DAW-aprendizaje/tree/main/backend-cartapp) | Java, Springboot |
 
 
-https://github.com/APoves/DAW-aprendizaje/tree/main/backend-cartapp
 
 <br>
 Hasta la fecha, se incluyen varias carpetas con proyectos y prácticas:
 
 - **`Formulario venta entradas`**: Mini-proyecto con formulario para la venta de entradas, realizado para la asignatura Lenguajes de Marcas y Sistemas de Gestión Empresarial.
 
-- **`Contador (React)`**: Mini-proyecto personal sencillo para aprendizaje. Contador realizado con React y Vite, para aprender hooks y gestión de estado.
+- **`Contador`**: Mini-proyecto personal sencillo para aprendizaje. Contador realizado con React y Vite, para aprender hooks y gestión de estado.
 
 - **`Aplicación de Facturación`**: Proyecto de aprendizaje. Realización de sistema de facturación.
 
-- **`Carrito de compras`**: Proyecto de aprendizaje. Realización de un carrito de compras (con catálogo y sistema de facturación, con persistencia en sessionStorage).
+- **`Carrito de compras`**: Proyecto de aprendizaje. Realización de un carrito de compras, versión frontend (con catálogo y sistema de facturación, con persistencia en sessionStorage).
+
+- **`Carrito de compras_Backend`**: Proyecto de aprendizaje. Realización de un carrito de compras, con backend.
+
+
 
 ---
 
