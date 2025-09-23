@@ -9,19 +9,16 @@ import com.aurora.backend.cartapp.backend_cartapp.models.entities.Product;
 import com.aurora.backend.cartapp.backend_cartapp.repositories.ProductRepository;
 
  @Service
-
-public class ProductServiceImpl implements ProductServices {
+public class ProductServiceImpl implements ProductService {
 
     @Autowired
     private ProductRepository repository;
 
     @Override
-    @Transactional (readOnly = true)
+    @Transactional(readOnly = true)
     public List<Product> findAll() {
         return (List<Product>) repository.findAll();
     }
 
 
 }
-
-
