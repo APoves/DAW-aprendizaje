@@ -8,6 +8,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.http.HttpStatus;
 
 import com.aurora.backend.userhublogin.backend_userhublogin.models.entities.User;
 import com.aurora.backend.userhublogin.backend_userhublogin.services.UserService;
@@ -34,6 +37,11 @@ public class UserController {
         } 
         //404 Not Found
         return ResponseEntity.notFound().build();
+    }
+
+    @PostMapping
+    public ResponseEntity<?> create(@RequestBody User user){
+        return ResponseEntity.status(HttpStatus.CREATED).body(service.save(user));
     }
 
 }
