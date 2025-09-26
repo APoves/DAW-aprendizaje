@@ -8,9 +8,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 
 import com.aurora.backend.userhublogin.backend_userhublogin.models.entities.User;
 import com.aurora.backend.userhublogin.backend_userhublogin.services.UserService;
@@ -44,4 +45,15 @@ public class UserController {
         return ResponseEntity.status(HttpStatus.CREATED).body(service.save(user));
     }
 
+    @PutMapping("/{id}")
+    public ResponseEntity<?> update(@RequestBody User user, @PathVariable Long id){
+        Optional<User> o = service.findById(id);
+        if (o.isPresent()){
+            User userdb = o.orElseThrow();
+            userdb.setUsername(user.getUsername());
+            userdb.setEmail(user.getEmail());
+            return ResponseEntity.status(HttpStatus.CREATED).body(service.save(userdb));
+        }
+        return ResponseEntity.notFound().build();
+    }
 }
