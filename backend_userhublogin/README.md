@@ -2,6 +2,7 @@
 
 Backend de la aplicación web **UserHubLogin**.
 <br>
+<br>
 Desarrollado con **Spring Boot 3.5.6**, **Java 21** y **MySQL**, con servicios REST para la gestión de usuarios.
 
 ---
