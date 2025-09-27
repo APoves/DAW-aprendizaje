@@ -3,16 +3,17 @@
 Backend de la aplicación web **UserHubLogin**.
 <br>
 <br>
-Desarrollado con **Spring Boot 3.5.6**, **Java 21** y **MySQL**, con servicios REST para la gestión de usuarios.
+API REST desarrollada con **Spring Boot 3.5.6**, **Java 21** y **MySQL**, con servicios REST para la gestión de usuarios.
 
 ---
 
 ## Tecnologías:
 
-- Java 21
-- Spring Boot 3.5.6 (Web, Data JPA, DevTools, Actuator)
-- MySQL
-- Maven
+- Java 21.
+- Spring Boot 3.5.6 (Web, Data JPA, DevTools, Actuator).
+- Spring Data JPA.
+- MySQL.
+- Maven.
 
 ---
 
@@ -20,8 +21,7 @@ Desarrollado con **Spring Boot 3.5.6**, **Java 21** y **MySQL**, con servicios R
 
 | Método | Endpoint       | Descripción                     |
 |--------|----------------|---------------------------------|
-| GET    | `/users`       | Lista todos los usuarios        |
-| GET    | `/users/{id}`  | Muestra un usuario por ID       |
+| GET    | `/users`       | Muestra todos los usuarios        |
 | POST   | `/users`       | Crea un nuevo usuario           |
 | PUT    | `/users/{id}`  | Actualiza un usuario existente  |
 | DELETE | `/users/{id}`  | Elimina un usuario por ID       |
@@ -52,8 +52,7 @@ backend_userhublogin/
 │   └── resources/
 │       └── application.properties
 ├── pom.xml
-
-
+```
 ---
 
 ## Créditos:
