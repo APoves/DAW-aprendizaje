@@ -9,8 +9,8 @@
 | Sistema de facturación (Invoice System) | [📂](https://github.com/APoves/DAW-aprendizaje/tree/main/Invoice%20system%20(React)) | JavaScript, React, Vite |
 | Carrito de compras (Cart) | [📂](https://github.com/APoves/DAW-aprendizaje/tree/main/Cart%20(React)) | JavaScript, React, Vite, React Router DOM |
 | Login + sistema de usuarios (UserHub + Login) | [📂](https://github.com/APoves/DAW-aprendizaje/tree/main/UserHubLogin%20(React)) |  JavaScript, React |
-| Carrito de compras_Backend (Cart_backend) | [📂](https://github.com/APoves/DAW-aprendizaje/tree/main/backend-cartapp) | Java, Springboot |
-
+| Carrito de compras_Backend (Cart_backend) | [📂](https://github.com/APoves/DAW-aprendizaje/tree/main/backend-cartapp) | Java, Springboot, MySQL |
+| Backend login + sistema de usuarios (UserHub + Login) | [📂](https://github.com/APoves/DAW-aprendizaje/tree/main/backend_userhublogin) | Java, Springboot, MySQL |
 
 
 <br>
