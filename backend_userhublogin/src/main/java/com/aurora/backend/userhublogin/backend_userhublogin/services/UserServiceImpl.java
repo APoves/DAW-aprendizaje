@@ -13,8 +13,8 @@ import com.aurora.backend.userhublogin.backend_userhublogin.repositories.UserRep
 @Service
 public class UserServiceImpl implements UserService {
 
-    private UserRepository repository;
     @Autowired
+    private UserRepository repository;
 
     @Override
     @Transactional(readOnly = true)
@@ -37,15 +37,15 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-     @Transactional
-    public User update(User user, Long id) {
+    @Transactional
+    public Optional<User> update(User user, Long id) {
         Optional<User> o = this.findById(id);
         User userOptional = null;
         if (o.isPresent()){
-            User userdb = o.orElseThrow();
-            userdb.setUsername(user.getUsername());
-            userdb.setEmail(user.getEmail());
-            userOptional = this.save(userdb);
+            User userDb = o.orElseThrow();
+            userDb.setUsername(user.getUsername());
+            userDb.setEmail(user.getEmail());
+            userOptional = this.save(userDb);
         }
 
         return Optional.ofNullable(userOptional);
