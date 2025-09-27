@@ -30,29 +30,29 @@ Desarrollado con **Spring Boot 3.5.6**, **Java 21** y **MySQL**, con servicios R
 
 ## Estructura del Proyecto:
 
+# 📁 Estructura del proyecto `backend_userhublogin`
+
+```text
 backend_userhublogin/
-src/
-main/
-java/
-com/
-aurora/
-backend/
-userhublogin/
-backend_userhublogin/
-controllers/
-UserController.java
-models/
-entities/
-User.java
-repositories/
-UserRepository.java
-services/
-UserService.java
-UserServiceImpl.java
-BackendUserhubloginApplication.java
-resources/
-application.properties
-pom.xml
+├── src/
+│   ├── main/
+│   │   ├── java/
+│   │   │   └── com/aurora/backend/userhublogin/backend_userhublogin/
+│   │   │       ├── controllers/
+│   │   │       │   └── UserController.java
+│   │   │       ├── models/
+│   │   │       │   └── entities/
+│   │   │       │       └── User.java
+│   │   │       ├── repositories/
+│   │   │       │   └── UserRepository.java
+│   │   │       ├── services/
+│   │   │       │   ├── UserService.java
+│   │   │       │   └── UserServiceImpl.java
+│   │   │       └── BackendUserhubloginApplication.java
+│   └── resources/
+│       └── application.properties
+├── pom.xml
+
 
 ---
 
