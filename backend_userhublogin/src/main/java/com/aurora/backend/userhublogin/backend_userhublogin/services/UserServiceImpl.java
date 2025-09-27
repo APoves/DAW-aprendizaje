@@ -37,10 +37,24 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+     @Transactional
+    public User update(User user, Long id) {
+        Optional<User> o = this.findById(id);
+        User userOptional = null;
+        if (o.isPresent()){
+            User userdb = o.orElseThrow();
+            userdb.setUsername(user.getUsername());
+            userdb.setEmail(user.getEmail());
+            userOptional = this.save(userdb);
+        }
+
+        return Optional.ofNullable(userOptional);
+    }
+
+    @Override
     @Transactional
     public void remove(Long id) {
         repository.deleteById(id);
-    repository.deleteById(id);
     }
     
 }

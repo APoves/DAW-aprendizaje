@@ -25,7 +25,7 @@ public class UserController {
     private UserService service;
 
     @GetMapping
-    public List<User> List(){
+    public List<User> list(){
         return service.findAll();
     }
 
@@ -48,12 +48,9 @@ public class UserController {
 
     @PutMapping("/{id}")
     public ResponseEntity<?> update(@RequestBody User user, @PathVariable Long id){
-        Optional<User> o = service.findById(id);
+        Optional<User> o = service.update(user, id);
         if (o.isPresent()){
-            User userdb = o.orElseThrow();
-            userdb.setUsername(user.getUsername());
-            userdb.setEmail(user.getEmail());
-            return ResponseEntity.status(HttpStatus.CREATED).body(service.save(userdb));
+            return ResponseEntity.status(HttpStatus.CREATED).body(o.orElseThrow());
         }
         return ResponseEntity.notFound().build();
     }
