@@ -30,8 +30,6 @@ API REST desarrollada con **Spring Boot 3.5.6**, **Java 21** y **MySQL**, con se
 
 ## Estructura del Proyecto:
 
-# 📁 Estructura del proyecto `backend_userhublogin`
-
 ```text
 backend_userhublogin/
 ├── src/
