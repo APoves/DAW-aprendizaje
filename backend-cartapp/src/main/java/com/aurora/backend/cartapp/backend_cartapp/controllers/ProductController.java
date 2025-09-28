@@ -6,9 +6,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.aurora.backend.cartapp.backend_cartapp.models.entities.Product;
 import com.aurora.backend.cartapp.backend_cartapp.services.ProductService;
-
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 @RestController
+@CrossOrigin(origins = {"http://localhost:5173"})
+
 public class ProductController {
 
     @Autowired
