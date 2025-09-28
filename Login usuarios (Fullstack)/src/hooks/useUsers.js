@@ -2,15 +2,9 @@ import { useReducer, useState } from "react";
 import { usersReducer } from "../reducers/usersReducer";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
+import { findAll } from "../services/userService";
 
-const initialUsers = [
-    {
-        id: 1,
-        username: 'admin',
-        password: '12345',
-        email: 'admin@correo.com'
-    },
-];
+const initialUsers = [];
 
 const initialUserForm = {
     id: 0,
@@ -29,7 +23,15 @@ export const useUsers = () => {
 
     const navigate = useNavigate();
 
-    const handlerAddUser = ( user) => {
+    const getUsers = async() => {
+        const result = await findAll();
+        dispatch({
+            type: 'loadingUsers',
+            payload: result.data,
+        });
+    }
+
+    const handlerAddUser = (user) => {
         // console.log(user);
 
         dispatch ({
@@ -105,5 +107,6 @@ export const useUsers = () => {
         handlerUserSelectedForm,
         handlerOpenForm,
         handlerCloseForm,
+        getUsers,
     }
 }
