@@ -6,8 +6,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Size;
 
@@ -25,12 +25,12 @@ public class User {
     @Column(unique = true)
     private String username;
     
-    @NotEmpty
+    @NotBlank
     private String password;
 
-    @NotEmpty(message = "El email no puede estar vacio")
+    @NotEmpty(message = "El correo electrónico no puede estar vacío.")
     @Size(min = 5)
-    @Email(message = "No es una direccion de correo valida")
+    @Email(message = "No es una direccion de correo válida.")
     @Column(unique = true)
     private String email;
 

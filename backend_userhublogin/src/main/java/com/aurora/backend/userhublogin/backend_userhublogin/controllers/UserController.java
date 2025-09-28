@@ -16,10 +16,14 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import com.aurora.backend.userhublogin.backend_userhublogin.models.entities.User;
 import com.aurora.backend.userhublogin.backend_userhublogin.services.UserService;
+import jakarta.validation.Valid;
+import org.springframework.validation.BindingResult;
+import java.util.Map;
+import java.util.HashMap;
 
 @RestController
 @RequestMapping("/users")
-@CrossOrigin(origins = {"http://localhost:5173"})
+@CrossOrigin(originPatterns="*")
 public class UserController {
 
     @Autowired
@@ -43,13 +47,20 @@ public class UserController {
     }
 
     @PostMapping
-    public ResponseEntity<?> create(@RequestBody User user){
+    public ResponseEntity<?> create(@Valid @RequestBody User user, BindingResult result){
+        if( result.hasErrors() ){
+            return validation(result);
+        }
         return ResponseEntity.status(HttpStatus.CREATED).body(service.save(user));
     }
 
+    
     @PutMapping("/{id}")
-    public ResponseEntity<?> update(@RequestBody User user, @PathVariable Long id){
+    public ResponseEntity<?> update(@Valid @RequestBody User user, BindingResult result, @PathVariable Long id) {
         Optional<User> o = service.update(user, id);
+        if(result.hasErrors()) {
+            return validation(result);
+        }
         if (o.isPresent()){
             return ResponseEntity.status(HttpStatus.CREATED).body(o.orElseThrow());
         }
@@ -66,5 +77,13 @@ public class UserController {
         }
         //404 Not Found
         return ResponseEntity.notFound().build();
+    }
+
+    private ResponseEntity<?> validation(BindingResult result) {
+        Map<String, String> errors = new HashMap<>();
+        result.getFieldErrors().forEach(err -> {
+            errors.put(err.getField(), "El campo " + err.getField() + " " + err.getDefaultMessage());
+        });
+        return ResponseEntity.badRequest().body(errors);
     }
 }
