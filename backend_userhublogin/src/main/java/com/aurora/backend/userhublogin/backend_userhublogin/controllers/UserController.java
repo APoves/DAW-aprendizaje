@@ -13,12 +13,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.DeleteMapping;
-
+import org.springframework.web.bind.annotation.CrossOrigin;
 import com.aurora.backend.userhublogin.backend_userhublogin.models.entities.User;
 import com.aurora.backend.userhublogin.backend_userhublogin.services.UserService;
 
 @RestController
 @RequestMapping("/users")
+@CrossOrigin(origins = {"http://localhost:5173"})
 public class UserController {
 
     @Autowired
