@@ -9,7 +9,7 @@ import com.aurora.backend.cartapp.backend_cartapp.services.ProductService;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
 @RestController
-@CrossOrigin(origins = {"http://localhost:5173"})
+@CrossOrigin(origins = {"http://localhost:5174"})
 
 public class ProductController {
 
