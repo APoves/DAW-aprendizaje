@@ -6,9 +6,13 @@ export const CatalogDetails = ( { handler} ) => {
 
     const [ products, setProducts ] = useState ([]);
 
+    const findAll = async() =>{
+        const prods = await getProducts();
+        setProducts(prods);
+    }
     useEffect(
         () => {
-          setProducts(getProducts());
+            findAll();
         }, []);
 
     return (
