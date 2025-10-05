@@ -8,6 +8,7 @@ export const UserProvider = ({children}) => {
         userSelected,
         initialUserForm,
         visibleForm,
+        errors,
         handlerAddUser,
         handlerRemoveUser,
         handlerUserSelectedForm,

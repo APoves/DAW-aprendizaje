@@ -13,7 +13,7 @@ const initialUserForm = {
     email: '',
 }
 
-const initialUserForm = {
+const initialErrors = {
     username: '',
     password: '',
     email: '',
@@ -27,7 +27,7 @@ export const useUsers = () => {
 
     const [ visibleForm, setVisibleForm ] = useState(false);
 
-    const [errors, setErrors] = useState({initialUserForm});
+    const [errors, setErrors] = useState(initialErrors);
 
     const navigate = useNavigate();
 

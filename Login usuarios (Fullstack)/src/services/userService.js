@@ -1,12 +1,13 @@
 import axios from 'axios';
 
 const BASE_URL = 'http://localhost:8080/users';
+
 export const findAll = async() => {
     try {
         const response = await axios.get(BASE_URL);
-        return response;
+        return response.data;
     } catch (error) {
-        console.log(error);
+        console.error(error);
     }  
         return null;
 }
@@ -30,7 +31,7 @@ export const update = async({id, username, email}) => {
             email,
         });
     }catch (error){
-    throw error;   
+        throw error;   
     }
 }
 
@@ -38,6 +39,6 @@ export const remove = async(id) => {
     try{
         return await axios.delete(`${BASE_URL}/${id}`);
     }catch (error){
-        console.eror(error);
+        console.error(error);
     }
 }
