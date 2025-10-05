@@ -8,7 +8,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.aurora.backend.userhublogin.backend_userhublogin.models.entities.User;
+import com.aurora.backend.userhublogin.backend_userhublogin.models.entities.UserRequest;
 import com.aurora.backend.userhublogin.backend_userhublogin.repositories.UserRepository;
+import com.aurora.backend.userhublogin.backend_userhublogin.services.UserService;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -38,7 +40,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @Transactional
-    public Optional<User> update(User user, Long id) {
+    public Optional<User> update(UserRequest user, Long id) {
         Optional<User> o = this.findById(id);
         User userOptional = null;
         if (o.isPresent()){
