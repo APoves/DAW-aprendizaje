@@ -35,7 +35,7 @@ export const useUsers = () => {
         const result = await findAll();
         dispatch({
             type: 'loadingUsers',
-            payload: result.data,
+            payload: result,
         });
     }
 
