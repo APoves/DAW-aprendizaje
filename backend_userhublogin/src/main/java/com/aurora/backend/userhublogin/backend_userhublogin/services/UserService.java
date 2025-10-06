@@ -3,8 +3,8 @@ package com.aurora.backend.userhublogin.backend_userhublogin.services;
 import java.util.List;
 import java.util.Optional;
 
-import com.aurora.backend.userhublogin.backend_userhublogin.models.UserRequest;
 import com.aurora.backend.userhublogin.backend_userhublogin.models.entities.User;
+import com.aurora.backend.userhublogin.backend_userhublogin.models.request.UserRequest;
 
 public interface UserService {
 

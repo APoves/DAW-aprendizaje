@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
-import com.aurora.backend.userhublogin.backend_userhublogin.models.UserRequest;
 import com.aurora.backend.userhublogin.backend_userhublogin.models.entities.User;
+import com.aurora.backend.userhublogin.backend_userhublogin.models.request.UserRequest;
 import com.aurora.backend.userhublogin.backend_userhublogin.services.UserService;
 import jakarta.validation.Valid;
 import org.springframework.validation.BindingResult;
@@ -60,10 +60,10 @@ public class UserController {
     
     @PutMapping("/{id}")
     public ResponseEntity<?> update(@Valid @RequestBody UserRequest user, BindingResult result, @PathVariable Long id) {
-        Optional<User> o = service.update(user, id);
         if(result.hasErrors()) {
             return validation(result);
         }
+        Optional<User> o = service.update(user, id);
         if (o.isPresent()){
             return ResponseEntity.status(HttpStatus.CREATED).body(o.orElseThrow());
         }
