@@ -14,8 +14,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.CrossOrigin;
+
+import com.aurora.backend.userhublogin.backend_userhublogin.models.UserRequest;
 import com.aurora.backend.userhublogin.backend_userhublogin.models.entities.User;
-import com.aurora.backend.userhublogin.backend_userhublogin.models.entities.UserRequest;
 import com.aurora.backend.userhublogin.backend_userhublogin.services.UserService;
 import jakarta.validation.Valid;
 import org.springframework.validation.BindingResult;

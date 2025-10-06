@@ -7,8 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.aurora.backend.userhublogin.backend_userhublogin.models.UserRequest;
 import com.aurora.backend.userhublogin.backend_userhublogin.models.entities.User;
-import com.aurora.backend.userhublogin.backend_userhublogin.models.entities.UserRequest;
 import com.aurora.backend.userhublogin.backend_userhublogin.repositories.UserRepository;
 import com.aurora.backend.userhublogin.backend_userhublogin.services.UserService;
 

@@ -1,4 +1,4 @@
-package com.aurora.backend.userhublogin.backend_userhublogin.models.entities;
+package com.aurora.backend.userhublogin.backend_userhublogin.models;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
