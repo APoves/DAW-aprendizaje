@@ -1,5 +1,5 @@
 
-package com.aurora.backend.userhublogin.backend_userhublogin; // debe ser el paquete raíz
+package com.aurora.backend.userhublogin.backend_userhublogin;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
