@@ -1,7 +1,6 @@
 package com.aurora.backend.userhublogin.backend_userhublogin.models.entities;
 
 import java.util.List;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -26,16 +25,15 @@ public class User {
     private Long id;
 
     @NotBlank
-    @Size(min = 4)
+    @Size(min = 4, max = 8)
     @Column(unique = true)
     private String username;
 
     @NotBlank
     private String password;
 
-    @NotEmpty(message = "El correo electrónico no puede estar vacío.")
-    @Size(min = 5)
-    @Email(message = "No es una direccion de correo válida.")
+    @NotEmpty
+    @Email
     @Column(unique = true)
     private String email;
 
@@ -48,6 +46,7 @@ public class User {
     private List<Role> roles;
 
     public Long getId() {
+
         return id;
     }
 
@@ -56,6 +55,7 @@ public class User {
     }
 
     public String getUsername() {
+
         return username;
     }
 
@@ -64,6 +64,7 @@ public class User {
     }
 
     public String getPassword() {
+
         return password;
     }
 
@@ -72,6 +73,7 @@ public class User {
     }
 
     public String getEmail() {
+
         return email;
     }
 
@@ -80,10 +82,12 @@ public class User {
     }
 
     public List<Role> getRoles() {
+
         return roles;
     }
 
     public void setRoles(List<Role> roles) {
         this.roles = roles;
     }
+
 }

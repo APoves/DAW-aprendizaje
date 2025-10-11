@@ -10,10 +10,10 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "roles")
 public class Role {
-
+    
     public Role() {
     }
-
+    
     public Role(String name) {
         this.name = name;
     }
@@ -26,6 +26,7 @@ public class Role {
     private String name;
 
     public Long getId() {
+        
         return id;
     }
 
@@ -34,6 +35,7 @@ public class Role {
     }
 
     public String getName() {
+
         return name;
     }
 

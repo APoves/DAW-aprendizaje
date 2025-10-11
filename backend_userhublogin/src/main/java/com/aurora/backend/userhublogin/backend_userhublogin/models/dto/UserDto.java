@@ -1,7 +1,6 @@
 package com.aurora.backend.userhublogin.backend_userhublogin.models.dto;
 
 public class UserDto {
-
     private Long id;
     private String username;
     private String email;
@@ -16,6 +15,7 @@ public class UserDto {
     }
 
     public Long getId() {
+
         return id;
     }
 
@@ -23,7 +23,9 @@ public class UserDto {
         this.id = id;
     }
 
+
     public String getUsername() {
+
         return username;
     }
 
@@ -32,6 +34,7 @@ public class UserDto {
     }
 
     public String getEmail() {
+        
         return email;
     }
 
@@ -39,3 +42,4 @@ public class UserDto {
         this.email = email;
     }
 }
+

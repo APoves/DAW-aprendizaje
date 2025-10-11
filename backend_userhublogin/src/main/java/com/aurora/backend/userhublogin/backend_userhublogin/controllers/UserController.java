@@ -23,7 +23,6 @@ import com.aurora.backend.userhublogin.backend_userhublogin.models.dto.UserDto;
 import com.aurora.backend.userhublogin.backend_userhublogin.models.entities.User;
 import com.aurora.backend.userhublogin.backend_userhublogin.models.request.UserRequest;
 import com.aurora.backend.userhublogin.backend_userhublogin.services.UserService;
-
 import jakarta.validation.Valid;
 
 @RestController
@@ -36,11 +35,13 @@ public class UserController {
 
     @GetMapping
     public List<UserDto> list() {
+
         return service.findAll();
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<?> show(@PathVariable Long id) {
+
         Optional<UserDto> userOptionl = service.findById(id);
 
         if (userOptionl.isPresent()) {
@@ -51,14 +52,17 @@ public class UserController {
     
     @PostMapping
     public ResponseEntity<?> create(@Valid @RequestBody User user, BindingResult result) {
+
         if(result.hasErrors()){
             return validation(result);
         }
+
         return ResponseEntity.status(HttpStatus.CREATED).body(service.save(user));
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<?> update(@Valid @RequestBody UserRequest user, BindingResult result, @PathVariable Long id) {
+
         if(result.hasErrors()){
             return validation(result);
         }
@@ -72,6 +76,7 @@ public class UserController {
     
     @DeleteMapping("/{id}")
     public ResponseEntity<?> remove(@PathVariable Long id) {
+
         Optional<UserDto> o = service.findById(id);
 
         if (o.isPresent()) {
@@ -82,6 +87,7 @@ public class UserController {
     }
     
     private ResponseEntity<?> validation(BindingResult result) {
+        
         Map<String, String> errors = new HashMap<>();
 
         result.getFieldErrors().forEach(err -> {

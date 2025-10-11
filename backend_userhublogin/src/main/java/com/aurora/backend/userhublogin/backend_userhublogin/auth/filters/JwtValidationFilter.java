@@ -1,4 +1,4 @@
-package com.aurora.backend.userhublogin.auth.filters;
+package com.aurora.backend.userhublogin.backend_userhublogin.auth.filters;
 
 import java.io.IOException;
 import java.util.Arrays;
@@ -8,25 +8,23 @@ import java.util.Map;
 
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
-
-import com.aurora.backend.userhublogin.auth.SimpleGrantedAuthorityJsonCreator;
-import com.fasterxml.jackson.databind.ObjectMapper;
-
-import io.jsonwebtoken.Claims;
-import io.jsonwebtoken.JwtException;
-import io.jsonwebtoken.Jwts;
-
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
 
+import com.aurora.backend.userhublogin.backend_userhublogin.auth.SimpleGrantedAuthorityJsonCreator;
+import static com.aurora.backend.userhublogin.backend_userhublogin.auth.TokenJwtConfig.HEADER_AUTHORIZATION;
+import static com.aurora.backend.userhublogin.backend_userhublogin.auth.TokenJwtConfig.PREFIX_TOKEN;
+import static com.aurora.backend.userhublogin.backend_userhublogin.auth.TokenJwtConfig.SECRET_KEY;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.JwtException;
+import io.jsonwebtoken.Jwts;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-
-import static com.aurora.backend.userhublogin.auth.TokenJwtConfig.*;
 
 public class JwtValidationFilter extends BasicAuthenticationFilter {
 
@@ -59,24 +57,28 @@ public class JwtValidationFilter extends BasicAuthenticationFilter {
 
             Object authoritiesClaims = claims.get("authorities");
             String username = claims.getSubject();
+            Object username2 = claims.get("username");
+            System.out.println(username);
+            System.out.println(username2);
 
             Collection<? extends GrantedAuthority> authorities = Arrays
                     .asList(new ObjectMapper()
                             .addMixIn(SimpleGrantedAuthority.class, SimpleGrantedAuthorityJsonCreator.class)
                             .readValue(authoritiesClaims.toString().getBytes(), SimpleGrantedAuthority[].class));
 
-            UsernamePasswordAuthenticationToken authentication =
-                    new UsernamePasswordAuthenticationToken(username, null, authorities);
+            UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(username, null,
+                    authorities);
 
             SecurityContextHolder.getContext().setAuthentication(authentication);
             chain.doFilter(request, response);
         } catch (JwtException e) {
+
             Map<String, String> body = new HashMap<>();
             body.put("error", e.getMessage());
-            body.put("message", "El token JWT no es válido!");
+            body.put("message", "El token JWT no es valido!");
 
             response.getWriter().write(new ObjectMapper().writeValueAsString(body));
-            response.setStatus(HttpServletResponse.SC_FORBIDDEN);
+            response.setStatus(403);
             response.setContentType("application/json");
         }
     }

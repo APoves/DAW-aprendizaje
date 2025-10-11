@@ -6,13 +6,17 @@ import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
 
 public class UserRequest {
-
+    
     @NotBlank
-    @Size(min = 4)
+    @Size(min = 4, max = 8)
     private String username;
+
+    @NotEmpty
+    @Email
     private String email;
 
     public String getUsername() {
+
         return username;
     }
 
@@ -20,15 +24,12 @@ public class UserRequest {
         this.username = username;
     }
 
-    @NotEmpty(message = "El correo electrónico no puede estar vacío.")
-    @Size(min = 5)
-    @Email(message = "No es una direccion de correo válida.")
     public String getEmail() {
+        
         return email;
     }
 
     public void setEmail(String email) {
         this.email = email;
     }
-
 }
