@@ -36,13 +36,22 @@ export const useUsers = () => {
 
     const { login, handlerLogout } = useContext(AuthContext);
 
-    const getUsers = async() => {
-        const result = await findAll();
-        dispatch({
-            type: 'loadingUsers',
-            payload: result,
-        });
+    const getUsers = async () => {
+        try {
+            const result = await findAll();
+            console.log(result);
+            dispatch({
+                type: 'loadingUsers',
+                payload: result,
+            });
+        } catch (error) {
+            if (error.response?.status == 401) {
+                handlerLogout();
+            }
+        }
     }
+
+
 
     const handlerAddUser = async(user) => {
 
