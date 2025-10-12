@@ -33,7 +33,7 @@ export const useUsers = () => {
 
     const navigate = useNavigate();
 
-    const { login } = useContext(AuthContext);
+    const { login, handlerLogout } = useContext(AuthContext);
 
     const getUsers = async() => {
         const result = await findAll();
@@ -84,6 +84,8 @@ export const useUsers = () => {
                                             if (error.response.data?.message?.includes('UK_email')) {
                             setErrors({email: 'El correo electrónico ya existe.'})
                         }
+                    } else if(error.response?status == 401) {
+                        handlerLogout();
                 } else {
                     throw error;
                 }
@@ -104,19 +106,26 @@ export const useUsers = () => {
             cancelButtonColor: '#d33',
             confirmButtonText: 'Eliminar usuario',
             cancelButtonText: 'Cancelar'
-        }).then((result) => {
+        }).then(async(result) => {
             if (result.isConfirmed) {
-                remove(id);
-                dispatch ( {
-                    type: 'removeUser',
-                    payload: id,
-                });
-                
-                Swal.fire(
-                'Usuario eliminado',
-                'El usuario ha sido eliminado correctamente.',
-                'success'
-                )
+
+                try{
+                    await remove(id);
+                    dispatch ( {
+                        type: 'removeUser',
+                        payload: id,
+                    });
+                    
+                    Swal.fire(
+                    'Usuario eliminado',
+                    'El usuario ha sido eliminado correctamente.',
+                    'success'
+                    );
+                }catch(error) {
+                    if (error.response?.status == 401){
+                        handlerLogout();
+                    }
+                }
             }
         })
     }
