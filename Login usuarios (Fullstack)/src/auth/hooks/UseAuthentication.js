@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom"
 
 const initialLogin = JSON.parse(sessionStorage.getItem('login')) ||  {
     isAuthenticated: false,
+    isAdmin: false,
     user: undefined,
 }
 
@@ -15,23 +16,38 @@ export const useAuthentication = () => {
 
     const navigate = useNavigate();
 
-    const handlerLogin = ({ username, password }) => {
-        const isLogin = loginUser({ username, password });
+    const handlerLogin = async ({ username, password }) => {
         
-        if (isLogin){
-            const user = { username: 'admin' }
+        try{
+            const response = await loginUser({ username, password });
+            
+            const token = response.data.tojen;
+
+            const claims = JSON.parse(window.atob(token.split(".")[1]));
+            console.log(claims);
+
+            const user = { username: claims.username }
             dispatch({
                 type: 'login',
-                payload: user,
+                payload: user, isAdmin: claims.isAdmin,
                 //Swal.fire('Login correcto.', 'Bienvenido al sistema', 'success');
             });
                 sessionStorage.setItem('login', JSON.stringify({
                 isAuthenticated: true,
+                isAdmin: claims.isAdmin,
                 user,
             }));
+            sessionStorage.setItem('token','Bearer ${token}');
             navigate ('/users');
-        } else {
-            Swal.fire('Error de autenticación', 'Nombre de usuario o password no válido.', 'error');
+        } catch(error) {
+            if(error.response?.status == 401) {
+                Swal.fire('Error de autenticación', 'Nombre de usuario o password no válidos.', 'error');
+            }else if(error.response?.status == 403) {
+                Swal.fire('Error de autenticación', 'No tiene acceso al recurso o permisos.', 'error');
+            } else {
+                throw error;
+            }
+            
         }
     }
 
@@ -39,7 +55,9 @@ export const useAuthentication = () => {
         dispatch({
             type: 'logout',
         });
+        sessionStorage.removeItem('token');
         sessionStorage.removeItem('login');
+        sessionStorage.clear();
     }
 
     return {
