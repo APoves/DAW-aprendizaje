@@ -13,6 +13,7 @@ const initialUserForm = {
     username: '',
     password: '',
     email: '',
+    admin: false,
 }
 
 const initialErrors = {
@@ -84,7 +85,7 @@ export const useUsers = () => {
                                             if (error.response.data?.message?.includes('UK_email')) {
                             setErrors({email: 'El correo electrónico ya existe.'})
                         }
-                    } else if(error.response?status == 401) {
+                    } else if(error.response?.status == 401) {
                         handlerLogout();
                 } else {
                     throw error;

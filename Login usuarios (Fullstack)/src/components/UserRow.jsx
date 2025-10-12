@@ -3,7 +3,7 @@ import { UserContext } from "../context/UserContext";
 import { useContext } from "react";
 import { AuthContext } from "../auth/context/AuthContext";
 
-export const UserRow = ({ id, username, email }) => {
+export const UserRow = ({ id, username, email, admin }) => {
 
     const { handlerUserSelectedForm, handlerRemoveUser } = useContext(UserContext);
 
@@ -21,9 +21,10 @@ export const UserRow = ({ id, username, email }) => {
                         type = "button" 
                         className = "btn btn-secondary btn-sm"
                         onClick = { () => handlerUserSelectedForm({
-                            id: id,
-                            username: username,
-                            email: email,
+                            id,
+                            username,
+                            email,
+                            admin
                         }) }
                     >
                         Actualizar
