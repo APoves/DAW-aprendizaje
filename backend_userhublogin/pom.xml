@@ -8,11 +8,11 @@
 		<version>3.0.5</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.andres.backend.usersapp</groupId>
-	<artifactId>backend-usersapp</artifactId>
+	<groupId>com.aurora.backend.userhublogin</groupId>
+	<artifactId>backend_userhublogin</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>backend-usersapp</name>
-	<description>Demo project for Spring Boot</description>
+	<name>backend_userhublogin</name>
+	<description>Backend for UserHubLogin demo</description>
 	<properties>
 		<java.version>19</java.version>
 	</properties>
