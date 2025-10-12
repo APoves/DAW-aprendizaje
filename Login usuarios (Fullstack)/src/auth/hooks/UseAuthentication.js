@@ -1,11 +1,11 @@
 import { useReducer } from "react"
 import { loginReducer } from "../reducers/loginReducer"
 import Swal from "sweetalert2"
-import { loginUser } from "../services/authServices"
+import { loginUser } from "../services/authService"
 import { useNavigate } from "react-router-dom"
 
 const initialLogin = JSON.parse(sessionStorage.getItem('login')) ||  {
-    isAuthenticated: false,
+    isAuth: false,
     isAdmin: false,
     user: undefined,
 }
@@ -21,7 +21,7 @@ export const useAuthentication = () => {
         try{
             const response = await loginUser({ username, password });
             
-            const token = response.data.tojen;
+            const token = response.data.token;
 
             const claims = JSON.parse(window.atob(token.split(".")[1]));
             console.log(claims);
@@ -29,7 +29,7 @@ export const useAuthentication = () => {
             const user = { username: claims.sub }
             dispatch({
                 type: 'login',
-                payload: user, isAdmin: claims.isAdmin,
+                payload: { user, isAdmin: claims.isAdmin },
                 //Swal.fire('Login correcto.', 'Bienvenido al sistema', 'success');
             });
                 sessionStorage.setItem('login', JSON.stringify({
@@ -37,7 +37,7 @@ export const useAuthentication = () => {
                 isAdmin: claims.isAdmin,
                 user,
             }));
-            sessionStorage.setItem('token','Bearer ${token}');
+            sessionStorage.setItem('token', `Bearer ${token}`);
             navigate ('/users');
         } catch(error) {
             if(error.response?.status == 401) {
