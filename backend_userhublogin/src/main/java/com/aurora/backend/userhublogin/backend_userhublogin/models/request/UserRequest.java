@@ -4,8 +4,9 @@ import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
+import com.aurora.backend.userhublogin.backend_userhublogin.models.IUser;
 
-public class UserRequest {
+public class UserRequest implements IUser{
     
     @NotBlank
     @Size(min = 4, max = 8)
@@ -14,6 +15,8 @@ public class UserRequest {
     @NotEmpty
     @Email
     private String email;
+
+    private boolean admin;
 
     public String getUsername() {
 
@@ -31,5 +34,14 @@ public class UserRequest {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    @Override
+    public boolean isAdmin() {
+        return admin;
+    }
+
+    public void setAdmin(boolean admin) {
+        this.admin = admin;
     }
 }
