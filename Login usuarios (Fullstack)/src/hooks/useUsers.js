@@ -3,6 +3,8 @@ import { usersReducer } from "../reducers/usersReducer";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 import { findAll, remove, save, update } from "../services/userService";
+import { AuthContext } from "../auth/context/AuthContext";
+import { useContext } from "react"
 
 const initialUsers = [];
 
@@ -31,6 +33,8 @@ export const useUsers = () => {
 
     const navigate = useNavigate();
 
+    const { login } = useContext(AuthContext);
+
     const getUsers = async() => {
         const result = await findAll();
         dispatch({
@@ -41,52 +45,55 @@ export const useUsers = () => {
 
     const handlerAddUser = async(user) => {
 
-    let response;
+        if(!login.isAdmin) return;
 
-    try{
-        if(user.id === 0 ) {
-            response = await save(user);
-        }else {
-            response = await update(user);
-        }
+        let response;
 
-            dispatch ({
-                type: (user.id === 0 ) ? 'addUser' : 'updateUser',
-                payload: response.data, 
-                });
-
-            Swal.fire(
-                (user.id === 0 ) ?
-                    'Usuario creado':
-                    'Usuario actualizado',
-                (user.id === 0 ) ?
-                    'El usuario ha sido creado correctamente.':
-                    'El usuario ha sido actualizado correctamente.',
-                'success'
-            );
-
-            handlerCloseForm();
-            navigate ('/users');
-        }catch (error){
-            if(error.response && error.response.status == 400) {
-                setErrors(error.response.data);
-            }else if (error.response && error.response.status == 500 &&
-                error.response.data?.message?.includes('constraint')) {
-                    if (error.response.data?.message?.includes('UK_username')) {
-                        setErrors({username: 'El nombre de usuario ya existe.'})
-                    }
-                                        if (error.response.data?.message?.includes('UK_email')) {
-                        setErrors({email: 'El correo electrónico ya existe.'})
-                    }
-            } else {
-                throw error;
+        try{
+            if(user.id === 0 ) {
+                response = await save(user);
+            }else {
+                response = await update(user);
             }
-        }
+
+                dispatch ({
+                    type: (user.id === 0 ) ? 'addUser' : 'updateUser',
+                    payload: response.data, 
+                    });
+
+                Swal.fire(
+                    (user.id === 0 ) ?
+                        'Usuario creado':
+                        'Usuario actualizado',
+                    (user.id === 0 ) ?
+                        'El usuario ha sido creado correctamente.':
+                        'El usuario ha sido actualizado correctamente.',
+                    'success'
+                );
+
+                handlerCloseForm();
+                navigate ('/users');
+            }catch (error){
+                if(error.response && error.response.status == 400) {
+                    setErrors(error.response.data);
+                }else if (error.response && error.response.status == 500 &&
+                    error.response.data?.message?.includes('constraint')) {
+                        if (error.response.data?.message?.includes('UK_username')) {
+                            setErrors({username: 'El nombre de usuario ya existe.'})
+                        }
+                                            if (error.response.data?.message?.includes('UK_email')) {
+                            setErrors({email: 'El correo electrónico ya existe.'})
+                        }
+                } else {
+                    throw error;
+                }
+            }
     }
 
 
     const handlerRemoveUser = (id) => {
-        //console.log(id);
+        
+        if(!login.isAdmin) return;
 
         Swal.fire({
             title: '¿Seguro que desea eliminar el usuario?',

@@ -1,11 +1,12 @@
 import { UserRow } from "./UserRow";
 import { UserContext } from "../context/UserContext";
 import { useContext } from "react";
-
+import { AuthContext } from "../auth/context/AuthContext";
 
 export const UsersList = () => {
     
     const { users } = useContext(UserContext); 
+    const { login } = useContext(AuthContext);
     
     return (
         <table 
@@ -17,9 +18,11 @@ export const UsersList = () => {
                     <th>#</th>
                     <th>Usuario</th>
                     <th>Correo electrónico</th>
-                    <th>Actualizar</th>
-                    <th>Actualizar ruta</th>
-                    <th>Eliminar</th>
+                    { !login.isAdmin || <>
+                        <th>Actualizar</th>
+                        <th>Actualizar ruta</th>
+                        <th>Eliminar</th>
+                    </>}
                 </tr>
             </thead>
 

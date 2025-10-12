@@ -29,11 +29,14 @@ export const Navbar = () => {
                 Usuarios
               </NavLink>
             </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/users/register">
-                Registrar usuario
-              </NavLink>
-            </li>
+
+            { !login.isAdmin ||
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/users/register">
+                  Registrar usuario
+                </NavLink>
+              </li>
+            }
           </ul>
 
           <span className="nav-item nav-link text-primary mx-3">

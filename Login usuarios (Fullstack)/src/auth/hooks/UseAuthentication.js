@@ -26,7 +26,7 @@ export const useAuthentication = () => {
             const claims = JSON.parse(window.atob(token.split(".")[1]));
             console.log(claims);
 
-            const user = { username: claims.username }
+            const user = { username: claims.sub }
             dispatch({
                 type: 'login',
                 payload: user, isAdmin: claims.isAdmin,
