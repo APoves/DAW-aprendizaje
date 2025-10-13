@@ -1,12 +1,10 @@
-import { useReducer, useState } from "react";
-import { usersReducer } from "../reducers/usersReducer";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 import { findAll, remove, save, update } from "../services/userService";
 import { AuthContext } from "../auth/context/AuthContext";
 import { useContext } from "react"
 import { useDispatch, useSelector } from "react-redux";
-import { addUser, removeUser, updateUser, OnUserSelectedForm, OnOpenForm, OnCloseForm, loadingUsers, initialUserForm } from "../store/slices/users/usersSlice";
+import { addUser, removeUser, updateUser, OnUserSelectedForm, OnOpenForm, OnCloseForm, loadingUsers, initialUserForm, loadingError } from "../store/slices/users/usersSlice";
 
 
 export const useUsers = () => {
@@ -15,7 +13,7 @@ export const useUsers = () => {
     
     const dispatch = useDispatch();
 
-    const { users, userSelectedm visibleForm, errors } = useSelector (state => state.users);
+    const { users, userSelected, visibleForm, errors } = useSelector (state => state.users);
 
     //const [ userSelected, setUserSelected ] = useState(initialUserForm);
 
@@ -67,14 +65,14 @@ export const useUsers = () => {
                 navigate ('/users');
             }catch (error){
                 if(error.response && error.response.status == 400) {
-                    setErrors(error.response.data);
+                    dispatch(loadingError(error.response.data));
                 }else if (error.response && error.response.status == 500 &&
                     error.response.data?.message?.includes('constraint')) {
                         if (error.response.data?.message?.includes('UK_username')) {
-                            setErrors({username: 'El nombre de usuario ya existe.'})
+                            dispatch(loadingError({username: 'El nombre de usuario ya existe.'}));
                         }
-                                            if (error.response.data?.message?.includes('UK_email')) {
-                            setErrors({email: 'El correo electrónico ya existe.'})
+                        if (error.response.data?.message?.includes('UK_email')) {
+                            dispatch(loadingError({email: 'El correo electrónico ya existe.'}));
                         }
                     } else if(error.response?.status == 401) {
                         handlerLogout();
@@ -136,7 +134,7 @@ export const useUsers = () => {
         //setVisibleForm(false);
         //setUserSelected(initialUserForm);
         dispatch(OnCloseForm());
-        setErrors({});
+        dispatch(loadingError({}));
     }
 
     return {
