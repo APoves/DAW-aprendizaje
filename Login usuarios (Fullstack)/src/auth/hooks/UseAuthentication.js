@@ -1,18 +1,17 @@
-import { useReducer } from "react"
-import { loginReducer } from "../reducers/loginReducer"
-import Swal from "sweetalert2"
-import { loginUser } from "../services/authService"
-import { useNavigate } from "react-router-dom"
+import Swal from "sweetalert2";
+import { loginUser } from "../services/authService";
+import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import{ onLogin, onLogout } from "../../store/slices/auth/";
 
-const initialLogin = JSON.parse(sessionStorage.getItem('login')) ||  {
-    isAuth: false,
-    isAdmin: false,
-    user: undefined,
-}
 
 export const useAuthentication = () => {
 
-    const [ login, dispatch ] = useReducer(loginReducer, initialLogin);
+    const dispatch = useDispatch();
+
+    const {user,isAdmin, isAuth} = useSelector(state=>state.auth);
+
+    //const [ login, dispatch ] = useReducer(loginReducer, initialLogin);
 
     const navigate = useNavigate();
 
@@ -27,11 +26,8 @@ export const useAuthentication = () => {
             console.log(claims);
 
             const user = { username: claims.sub }
-            dispatch({
-                type: 'login',
-                payload: { user, isAdmin: claims.isAdmin },
-                //Swal.fire('Login correcto.', 'Bienvenido al sistema', 'success');
-            });
+            dispatch(onLogin({ user, isAdmin: claims.isAdmin }));
+                
                 sessionStorage.setItem('login', JSON.stringify({
                 isAuthenticated: true,
                 isAdmin: claims.isAdmin,
@@ -52,16 +48,18 @@ export const useAuthentication = () => {
     }
 
     const handlerLogout = () => {
-        dispatch({
-            type: 'logout',
-        });
+        dispatch(onLogout());
         sessionStorage.removeItem('token');
         sessionStorage.removeItem('login');
         sessionStorage.clear();
     }
 
     return {
-        login,
+        login: {
+            user,
+            isAdmin,
+            isAuth,
+        },
         handlerLogin,
         handlerLogout,
     }

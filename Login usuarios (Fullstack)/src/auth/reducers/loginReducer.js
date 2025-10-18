@@ -6,7 +6,6 @@ export const loginReducer = ( state = {}, action ) => {
             return {
                 isAuthenticated: true,
                 isAdmin: action.payload.isAdmin,
-            
                 user: action.payload.user,
             }
         case 'logout': 
