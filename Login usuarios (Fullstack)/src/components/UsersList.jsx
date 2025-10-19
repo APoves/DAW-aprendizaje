@@ -1,12 +1,12 @@
 import { UserRow } from "./UserRow";
-import { useContext } from "reac";
-import { AuthContext } from "../auth/context/AuthContext";
 import { useUsers } from "..hooks/useUsers";
+import { useAuthentication } from "../auth/hooks/UseAuthentication";
+
 
 export const UsersList = () => {
     
     const { users } = useUsers(); 
-    const { login } = useContext(AuthContext);
+    const { login } = useAuthentication();
     
     return (
         <table 

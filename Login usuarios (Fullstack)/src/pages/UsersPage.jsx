@@ -1,10 +1,9 @@
-import { useContext } from "react";
 import { UserModalForm } from "../components/UserModalForm";
 import { UsersList } from "../components/UsersList";
 import { useEffect } from "react";
-import { AuthContext } from "../auth/context/AuthContext"
 import { useUsers } from "../hooks/useUsers";
- 
+import { useAuthentication } from "../../auth/hooks/UseAuthentication";
+
 export const UsersPage = () => {
 
     const { 
@@ -14,7 +13,7 @@ export const UsersPage = () => {
         getUsers
     } = useUsers ();
 
-    const { login } = useContext(AuthContext);
+    const { login } = useAuthentication();
 
     useEffect (() => {
         getUsers();
